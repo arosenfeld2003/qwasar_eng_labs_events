@@ -1,0 +1,30 @@
+{
+  "events": [
+    {"id": "evt-001", "type": "venue_prep", "priority": "high", "timestamp": 1, "description": "Prepare main hall"},
+    {"id": "evt-002", "type": "floral_setup", "priority": "medium", "timestamp": 1, "description": "Setup flower arrangements"},
+    {"id": "evt-003", "type": "lighting_setup", "priority": "medium", "timestamp": 2, "description": "Install lighting"},
+    {"id": "evt-004", "type": "table_setup", "priority": "high", "timestamp": 2, "description": "Arrange guest tables"},
+    {"id": "evt-005", "type": "band_setup", "priority": "low", "timestamp": 3, "description": "Band equipment setup"},
+    {"id": "evt-006", "type": "bar_setup", "priority": "medium", "timestamp": 3, "description": "Setup bar area"},
+    {"id": "evt-007", "type": "seating_arrangement", "priority": "high", "timestamp": 4, "description": "Final seating check"},
+    {"id": "evt-008", "type": "bouquet_delivery", "priority": "high", "timestamp": 5, "description": "Bridal bouquet delivery"},
+    {"id": "evt-009", "type": "guest_arrival", "priority": "high", "timestamp": 6, "description": "First guests arriving"},
+    {"id": "evt-010", "type": "photo_session", "priority": "medium", "timestamp": 6, "description": "Pre-ceremony photos"},
+    {"id": "evt-011", "type": "bridal_transport", "priority": "high", "timestamp": 7, "description": "Bride arrival"},
+    {"id": "evt-012", "type": "ceremony_start", "priority": "high", "timestamp": 8, "description": "Ceremony begins"},
+    {"id": "evt-013", "type": "candid_capture", "priority": "low", "timestamp": 9, "description": "Ceremony candids"},
+    {"id": "evt-014", "type": "video_recording", "priority": "medium", "timestamp": 9, "description": "Record ceremony"},
+    {"id": "evt-015", "type": "group_photo", "priority": "high", "timestamp": 10, "description": "Family group photos"},
+    {"id": "evt-016", "type": "reception_start", "priority": "high", "timestamp": 11, "description": "Reception begins"},
+    {"id": "evt-017", "type": "meal_service", "priority": "high", "timestamp": 12, "description": "Appetizers served"},
+    {"id": "evt-018", "type": "live_performance", "priority": "medium", "timestamp": 13, "description": "Live music begins"},
+    {"id": "evt-019", "type": "meal_service", "priority": "high", "timestamp": 14, "description": "Main course"},
+    {"id": "evt-020", "type": "first_dance", "priority": "high", "timestamp": 15, "description": "First dance"},
+    {"id": "evt-021", "type": "cake_delivery", "priority": "high", "timestamp": 16, "description": "Wedding cake"},
+    {"id": "evt-022", "type": "dessert_service", "priority": "medium", "timestamp": 17, "description": "Desserts served"},
+    {"id": "evt-023", "type": "dj_setup", "priority": "low", "timestamp": 18, "description": "DJ takes over"},
+    {"id": "evt-024", "type": "petal_scatter", "priority": "low", "timestamp": 19, "description": "Rose petals for exit"},
+    {"id": "evt-025", "type": "guest_pickup", "priority": "medium", "timestamp": 20, "description": "Guest transport"},
+    {"id": "evt-026", "type": "cleanup", "priority": "low", "timestamp": 21, "description": "Venue cleanup begins"}
+  ]
+}
