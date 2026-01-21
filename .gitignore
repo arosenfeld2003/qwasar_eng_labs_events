@@ -1,0 +1,12 @@
+# Local/OS files
+.DS_Store
+
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Generated datasets/logs
+*.log
+
+# Agent docs
+AGENTS.md
