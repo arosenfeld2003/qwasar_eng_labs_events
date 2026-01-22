@@ -56,7 +56,7 @@ func NewRabbitMQ(ctx context.Context, cfg RabbitMQConfig) (*RabbitMQ, error) {
 		},
 	}
 	if cfg.ChannelMax > 0 {
-		config.ChannelMax = cfg.ChannelMax
+		config.ChannelMax = uint16(cfg.ChannelMax)
 	}
 	if cfg.FrameSize > 0 {
 		config.FrameSize = cfg.FrameSize
