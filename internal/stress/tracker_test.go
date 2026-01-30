@@ -1,10 +1,12 @@
 package stress
 
 import (
+	"context"
 	"encoding/json"
 	"testing"
 	"time"
 
+	"github.com/arosenfeld2003/qwasar_eng_labs_events/internal/broker"
 	"github.com/arosenfeld2003/qwasar_eng_labs_events/internal/event"
 )
 
@@ -231,5 +233,63 @@ func TestReportJSON(t *testing.T) {
 	}
 	if parsed.OverallStress != 0.5 {
 		t.Fatalf("expected 0.5 overall stress in JSON, got %f", parsed.OverallStress)
+	}
+}
+
+func TestConsumeFromBroker(t *testing.T) {
+	mb := broker.NewMockBroker()
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
+	queueName := "events.results"
+	_, err := mb.DeclareQueue(ctx, queueName, broker.QueueOptions{})
+	if err != nil {
+		t.Fatalf("declare queue: %v", err)
+	}
+
+	tr := New()
+
+	// Publish two result events
+	e1 := makeEvent(1, event.TypeMealService, event.PriorityHigh, event.StatusCompleted)
+	re1 := ResultEvent{Event: e1, CompletedAt: time.Now()}
+	body1, _ := json.Marshal(re1)
+
+	e2 := makeEvent(2, event.TypeBrawl, event.PriorityHigh, event.StatusExpired)
+	re2 := ResultEvent{Event: e2}
+	body2, _ := json.Marshal(re2)
+
+	// Start consuming in background
+	consumeDone := make(chan error, 1)
+	go func() {
+		consumeDone <- tr.Consume(ctx, mb, queueName)
+	}()
+
+	// Give consumer time to subscribe
+	time.Sleep(50 * time.Millisecond)
+
+	err = mb.Publish(ctx, broker.Message{Body: body1, ContentType: "application/json"}, broker.PublishOptions{RoutingKey: queueName})
+	if err != nil {
+		t.Fatalf("publish: %v", err)
+	}
+	err = mb.Publish(ctx, broker.Message{Body: body2, ContentType: "application/json"}, broker.PublishOptions{RoutingKey: queueName})
+	if err != nil {
+		t.Fatalf("publish: %v", err)
+	}
+
+	// Wait for messages to be processed
+	time.Sleep(100 * time.Millisecond)
+	cancel()
+
+	<-consumeDone
+
+	r := tr.Report()
+	if r.TotalEvents != 2 {
+		t.Fatalf("expected 2 events, got %d", r.TotalEvents)
+	}
+	if r.Completed != 1 || r.Expired != 1 {
+		t.Fatalf("expected 1 completed and 1 expired, got %d/%d", r.Completed, r.Expired)
+	}
+	if r.OverallStress != 0.5 {
+		t.Fatalf("expected 0.5 stress, got %f", r.OverallStress)
 	}
 }
