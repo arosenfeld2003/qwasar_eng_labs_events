@@ -2,6 +2,7 @@ package stress
 
 import (
 	"encoding/json"
+	"sync"
 	"time"
 
 	"github.com/arosenfeld2003/qwasar_eng_labs_events/internal/event"
@@ -54,4 +55,44 @@ type Report struct {
 // JSON returns the report as a JSON byte slice.
 func (r *Report) JSON() ([]byte, error) {
 	return json.MarshalIndent(r, "", "  ")
+}
+
+// Tracker consumes processed events and calculates stress metrics.
+type Tracker struct {
+	mu        sync.Mutex
+	events    []ResultEvent
+	completed int
+	expired   int
+}
+
+// New creates a new Tracker.
+func New() *Tracker {
+	return &Tracker{}
+}
+
+// Record adds a processed event result to the tracker.
+func (t *Tracker) Record(re ResultEvent) {
+	t.mu.Lock()
+	defer t.mu.Unlock()
+
+	t.events = append(t.events, re)
+	switch re.Event.Status {
+	case event.StatusCompleted:
+		t.completed++
+	case event.StatusExpired:
+		t.expired++
+	}
+}
+
+// StressLevel returns the current stress ratio: expired / total.
+// Returns 0 if no events have been recorded.
+func (t *Tracker) StressLevel() float64 {
+	t.mu.Lock()
+	defer t.mu.Unlock()
+
+	total := t.completed + t.expired
+	if total == 0 {
+		return 0
+	}
+	return float64(t.expired) / float64(total)
 }
