@@ -1,10 +1,13 @@
 package stress
 
 import (
+	"context"
 	"encoding/json"
+	"fmt"
 	"sync"
 	"time"
 
+	"github.com/arosenfeld2003/qwasar_eng_labs_events/internal/broker"
 	"github.com/arosenfeld2003/qwasar_eng_labs_events/internal/event"
 )
 
@@ -181,4 +184,33 @@ func (t *Tracker) Report() *Report {
 	}
 
 	return r
+}
+
+// Consume subscribes to the results queue and records events until the
+// context is cancelled. It blocks until the context is done.
+func (t *Tracker) Consume(ctx context.Context, b broker.Broker, queue string) error {
+	sub, err := b.Subscribe(ctx, broker.ConsumeOptions{
+		Queue:   queue,
+		AutoAck: true,
+	})
+	if err != nil {
+		return fmt.Errorf("subscribe to %s: %w", queue, err)
+	}
+	defer sub.Cancel()
+
+	for {
+		select {
+		case <-ctx.Done():
+			return ctx.Err()
+		case d, ok := <-sub.Deliveries:
+			if !ok {
+				return nil
+			}
+			var re ResultEvent
+			if err := json.Unmarshal(d.Body, &re); err != nil {
+				continue
+			}
+			t.Record(re)
+		}
+	}
 }
