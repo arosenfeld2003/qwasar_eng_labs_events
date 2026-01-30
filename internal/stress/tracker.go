@@ -96,3 +96,89 @@ func (t *Tracker) StressLevel() float64 {
 	}
 	return float64(t.expired) / float64(total)
 }
+
+// Report generates a full stress report with breakdowns.
+func (t *Tracker) Report() *Report {
+	t.mu.Lock()
+	defer t.mu.Unlock()
+
+	r := &Report{
+		ByPriority: make(map[string]PriorityStats),
+		ByTeam:     make(map[string]TeamStats),
+	}
+
+	for _, re := range t.events {
+		e := re.Event
+		if e.Status != event.StatusCompleted && e.Status != event.StatusExpired {
+			continue
+		}
+
+		r.TotalEvents++
+		isCompleted := e.Status == event.StatusCompleted
+
+		if isCompleted {
+			r.Completed++
+		} else {
+			r.Expired++
+		}
+
+		// Priority breakdown
+		pKey := string(e.Priority)
+		ps := r.ByPriority[pKey]
+		ps.Total++
+		if isCompleted {
+			ps.Completed++
+		} else {
+			ps.Expired++
+		}
+		r.ByPriority[pKey] = ps
+
+		// Team breakdown
+		tKey := string(e.Team())
+		ts := r.ByTeam[tKey]
+		ts.Total++
+		if isCompleted {
+			ts.Completed++
+		} else {
+			ts.Expired++
+		}
+		r.ByTeam[tKey] = ts
+
+		// Duration
+		var dur time.Duration
+		if isCompleted && !re.CompletedAt.IsZero() && !e.ReceivedAt.IsZero() {
+			dur = re.CompletedAt.Sub(e.ReceivedAt)
+		} else if !e.ReceivedAt.IsZero() && !e.Deadline.IsZero() {
+			dur = e.Deadline.Sub(e.ReceivedAt)
+		}
+
+		r.Durations = append(r.Durations, EventDuration{
+			EventID:   e.ID,
+			EventType: string(e.Type),
+			Priority:  pKey,
+			Team:      tKey,
+			Status:    string(e.Status),
+			Duration:  dur,
+			DurationS: dur.String(),
+		})
+	}
+
+	// Calculate stress ratios
+	if r.TotalEvents > 0 {
+		r.OverallStress = float64(r.Expired) / float64(r.TotalEvents)
+	}
+	for k, ps := range r.ByPriority {
+		if ps.Total > 0 {
+			ps.Stress = float64(ps.Expired) / float64(ps.Total)
+		}
+		r.ByPriority[k] = ps
+	}
+	for k, ts := range r.ByTeam {
+		if ts.Total > 0 {
+			ts.Stress = float64(ts.Expired) / float64(ts.Total)
+		}
+		r.ByTeam[k] = ts
+	}
+
+	return r
+}
