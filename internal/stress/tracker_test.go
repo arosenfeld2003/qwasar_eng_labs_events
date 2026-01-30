@@ -117,3 +117,65 @@ func TestConcurrentRecords(t *testing.T) {
 		t.Fatalf("expected 25 expired, got %d", r.Expired)
 	}
 }
+
+func TestReportByPriority(t *testing.T) {
+	tr := New()
+	tr.Record(ResultEvent{Event: makeEvent(1, event.TypeMealService, event.PriorityHigh, event.StatusCompleted), CompletedAt: time.Now()})
+	tr.Record(ResultEvent{Event: makeEvent(2, event.TypeBrawl, event.PriorityHigh, event.StatusExpired)})
+	tr.Record(ResultEvent{Event: makeEvent(3, event.TypeTableSetup, event.PriorityLow, event.StatusCompleted), CompletedAt: time.Now()})
+
+	r := tr.Report()
+
+	high, ok := r.ByPriority["High"]
+	if !ok {
+		t.Fatal("expected High priority stats")
+	}
+	if high.Total != 2 || high.Completed != 1 || high.Expired != 1 {
+		t.Fatalf("High: got total=%d completed=%d expired=%d", high.Total, high.Completed, high.Expired)
+	}
+	if high.Stress != 0.5 {
+		t.Fatalf("expected High stress 0.5, got %f", high.Stress)
+	}
+
+	low, ok := r.ByPriority["Low"]
+	if !ok {
+		t.Fatal("expected Low priority stats")
+	}
+	if low.Total != 1 || low.Completed != 1 || low.Expired != 0 {
+		t.Fatalf("Low: got total=%d completed=%d expired=%d", low.Total, low.Completed, low.Expired)
+	}
+	if low.Stress != 0 {
+		t.Fatalf("expected Low stress 0, got %f", low.Stress)
+	}
+}
+
+func TestReportByTeam(t *testing.T) {
+	tr := New()
+	tr.Record(ResultEvent{Event: makeEvent(1, event.TypeMealService, event.PriorityHigh, event.StatusCompleted), CompletedAt: time.Now()})
+	tr.Record(ResultEvent{Event: makeEvent(2, event.TypeCakeDelivery, event.PriorityMedium, event.StatusExpired)})
+	tr.Record(ResultEvent{Event: makeEvent(3, event.TypeBrawl, event.PriorityHigh, event.StatusExpired)})
+
+	r := tr.Report()
+
+	catering, ok := r.ByTeam["catering"]
+	if !ok {
+		t.Fatal("expected catering team stats")
+	}
+	if catering.Total != 2 || catering.Completed != 1 || catering.Expired != 1 {
+		t.Fatalf("catering: got total=%d completed=%d expired=%d", catering.Total, catering.Completed, catering.Expired)
+	}
+	if catering.Stress != 0.5 {
+		t.Fatalf("expected catering stress 0.5, got %f", catering.Stress)
+	}
+
+	security, ok := r.ByTeam["security"]
+	if !ok {
+		t.Fatal("expected security team stats")
+	}
+	if security.Total != 1 || security.Expired != 1 {
+		t.Fatalf("security: got total=%d expired=%d", security.Total, security.Expired)
+	}
+	if security.Stress != 1.0 {
+		t.Fatalf("expected security stress 1.0, got %f", security.Stress)
+	}
+}
