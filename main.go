@@ -1,16 +1,28 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"log"
 	"net/http"
 	"os"
+
+	"github.com/arosenfeld2003/qwasar_eng_labs_events/internal/logger"
 )
 
 func main() {
-	// Read RabbitMQ URL from env (even if we don't use it yet)
+	verbose := flag.Bool("verbose", false, "pretty logs (development)")
+	logLevel := flag.String("log-level", "info", "debug|info|warn|error")
+	flag.Parse()
+
+	log := logger.Setup(logger.Config{
+		Verbose:   *verbose,
+		Level:     *logLevel,
+		Component: "marry-me",
+		Out:       os.Stdout,
+	})
+
 	rabbitURL := os.Getenv("RABBITMQ_URL")
-	log.Printf("Starting marry-me service. RABBITMQ_URL=%q\n", rabbitURL)
+	log.Info().Str("rabbitmq_url", rabbitURL).Msg("Starting marry-me service")
 
 	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
@@ -22,6 +34,6 @@ func main() {
 	})
 
 	port := "8080"
-	log.Printf("Listening on :%s", port)
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	log.Info().Str("port", port).Msg("Listening")
+	log.Fatal().Err(http.ListenAndServe(":"+port, nil)).Msg("server stopped")
 }
