@@ -1,6 +1,7 @@
 package stress
 
 import (
+	"encoding/json"
 	"testing"
 	"time"
 
@@ -177,5 +178,58 @@ func TestReportByTeam(t *testing.T) {
 	}
 	if security.Stress != 1.0 {
 		t.Fatalf("expected security stress 1.0, got %f", security.Stress)
+	}
+}
+
+func TestReportDurations(t *testing.T) {
+	tr := New()
+	now := time.Now()
+	e := event.Event{
+		ID:       1,
+		Type:     event.TypeMealService,
+		Priority: event.PriorityHigh,
+		Status:   event.StatusCompleted,
+	}
+	e.SetReceived(now.Add(-3 * time.Second))
+	e.Status = event.StatusCompleted
+
+	tr.Record(ResultEvent{Event: e, CompletedAt: now})
+
+	r := tr.Report()
+	if len(r.Durations) != 1 {
+		t.Fatalf("expected 1 duration entry, got %d", len(r.Durations))
+	}
+	d := r.Durations[0]
+	if d.EventID != 1 {
+		t.Fatalf("expected event ID 1, got %d", d.EventID)
+	}
+	if d.Duration < 2*time.Second || d.Duration > 4*time.Second {
+		t.Fatalf("expected duration ~3s, got %s", d.DurationS)
+	}
+	if d.Team != "catering" {
+		t.Fatalf("expected team catering, got %s", d.Team)
+	}
+}
+
+func TestReportJSON(t *testing.T) {
+	tr := New()
+	tr.Record(ResultEvent{Event: makeEvent(1, event.TypeMealService, event.PriorityHigh, event.StatusCompleted), CompletedAt: time.Now()})
+	tr.Record(ResultEvent{Event: makeEvent(2, event.TypeBrawl, event.PriorityHigh, event.StatusExpired)})
+
+	r := tr.Report()
+	data, err := r.JSON()
+	if err != nil {
+		t.Fatalf("JSON marshal failed: %v", err)
+	}
+
+	var parsed Report
+	if err := json.Unmarshal(data, &parsed); err != nil {
+		t.Fatalf("JSON unmarshal failed: %v", err)
+	}
+	if parsed.TotalEvents != 2 {
+		t.Fatalf("expected 2 total events in JSON, got %d", parsed.TotalEvents)
+	}
+	if parsed.OverallStress != 0.5 {
+		t.Fatalf("expected 0.5 overall stress in JSON, got %f", parsed.OverallStress)
 	}
 }
