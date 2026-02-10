@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"log"
 	"sync"
 	"time"
 
@@ -186,6 +187,30 @@ func (t *Tracker) Report() *Report {
 	return r
 }
 
+// parseResultEvent accepts both a ResultEvent wrapper ({"event": {...}})
+// and a raw event.Event ({"id": ...}). The organizer publishes raw events
+// to the results queue, while team workers may publish ResultEvent wrappers.
+func parseResultEvent(data []byte) (ResultEvent, error) {
+	// Try the ResultEvent wrapper first.
+	var re ResultEvent
+	if err := json.Unmarshal(data, &re); err != nil {
+		return ResultEvent{}, err
+	}
+	// If the wrapper produced a valid event, use it.
+	if re.Event.ID != 0 {
+		return re, nil
+	}
+	// Fall back to raw event.Event (e.g. from organizer.publishExpired).
+	var ev event.Event
+	if err := json.Unmarshal(data, &ev); err != nil {
+		return ResultEvent{}, err
+	}
+	if ev.ID == 0 {
+		return ResultEvent{}, fmt.Errorf("event has no ID")
+	}
+	return ResultEvent{Event: ev}, nil
+}
+
 // Consume subscribes to the results queue and records events until the
 // context is cancelled. It blocks until the context is done.
 func (t *Tracker) Consume(ctx context.Context, b broker.Broker, queue string) error {
@@ -206,8 +231,9 @@ func (t *Tracker) Consume(ctx context.Context, b broker.Broker, queue string) er
 			if !ok {
 				return nil
 			}
-			var re ResultEvent
-			if err := json.Unmarshal(d.Body, &re); err != nil {
+			re, err := parseResultEvent(d.Body)
+			if err != nil {
+				log.Printf("stress: unmarshal error: %v", err)
 				continue
 			}
 			t.Record(re)

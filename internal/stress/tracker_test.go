@@ -293,3 +293,82 @@ func TestConsumeFromBroker(t *testing.T) {
 		t.Fatalf("expected 0.5 stress, got %f", r.OverallStress)
 	}
 }
+
+func TestConsumeRawEventFromBroker(t *testing.T) {
+	mb := broker.NewMockBroker()
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
+	queueName := "events.results"
+	if _, err := mb.DeclareQueue(ctx, queueName, broker.QueueOptions{}); err != nil {
+		t.Fatalf("declare queue: %v", err)
+	}
+
+	tr := New()
+
+	// Publish a raw event.Event (the format the organizer uses).
+	ev := makeEvent(10, event.TypeBrawl, event.PriorityHigh, event.StatusExpired)
+	body, _ := json.Marshal(ev)
+
+	consumeDone := make(chan error, 1)
+	go func() {
+		consumeDone <- tr.Consume(ctx, mb, queueName)
+	}()
+	time.Sleep(50 * time.Millisecond)
+
+	if err := mb.Publish(ctx, broker.Message{Body: body, ContentType: "application/json"}, broker.PublishOptions{RoutingKey: queueName}); err != nil {
+		t.Fatalf("publish: %v", err)
+	}
+
+	time.Sleep(100 * time.Millisecond)
+	cancel()
+	<-consumeDone
+
+	r := tr.Report()
+	if r.TotalEvents != 1 {
+		t.Fatalf("expected 1 event, got %d", r.TotalEvents)
+	}
+	if r.Expired != 1 {
+		t.Fatalf("expected 1 expired, got %d", r.Expired)
+	}
+}
+
+func TestConsumeMalformedMessage(t *testing.T) {
+	mb := broker.NewMockBroker()
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
+	queueName := "events.results"
+	if _, err := mb.DeclareQueue(ctx, queueName, broker.QueueOptions{}); err != nil {
+		t.Fatalf("declare queue: %v", err)
+	}
+
+	tr := New()
+
+	consumeDone := make(chan error, 1)
+	go func() {
+		consumeDone <- tr.Consume(ctx, mb, queueName)
+	}()
+	time.Sleep(50 * time.Millisecond)
+
+	// Publish garbage bytes — should be skipped without panic.
+	if err := mb.Publish(ctx, broker.Message{Body: []byte("not json")}, broker.PublishOptions{RoutingKey: queueName}); err != nil {
+		t.Fatalf("publish: %v", err)
+	}
+
+	// Publish a valid event after the garbage to confirm processing continues.
+	ev := makeEvent(99, event.TypeMealService, event.PriorityMedium, event.StatusCompleted)
+	body, _ := json.Marshal(ResultEvent{Event: ev, CompletedAt: time.Now()})
+	if err := mb.Publish(ctx, broker.Message{Body: body, ContentType: "application/json"}, broker.PublishOptions{RoutingKey: queueName}); err != nil {
+		t.Fatalf("publish: %v", err)
+	}
+
+	time.Sleep(100 * time.Millisecond)
+	cancel()
+	<-consumeDone
+
+	r := tr.Report()
+	if r.TotalEvents != 1 {
+		t.Fatalf("expected 1 event (garbage skipped), got %d", r.TotalEvents)
+	}
+}
