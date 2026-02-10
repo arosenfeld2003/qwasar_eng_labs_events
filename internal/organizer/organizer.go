@@ -84,9 +84,8 @@ func (pq *priorityQueue) Pop() interface{} {
 
 // Stats holds organizer processing counters.
 type Stats struct {
-	Routed    int64
-	Expired   int64
-	MultiTeam int64
+	Routed  int64
+	Expired int64
 }
 
 // ---- Organizer ----------------------------------------------------------
@@ -94,11 +93,10 @@ type Stats struct {
 // Organizer subscribes to validated events, sorts them by priority, and
 // routes each event to the appropriate team queue.
 type Organizer struct {
-	broker broker.Broker
-	routed atomic.Int64
+	broker  broker.Broker
+	routed  atomic.Int64
 	expired atomic.Int64
-	multiTeam atomic.Int64
-	mu     sync.Mutex // guards pq
+	mu      sync.Mutex // guards pq
 	pq     priorityQueue
 }
 
@@ -144,8 +142,8 @@ func (o *Organizer) Setup(ctx context.Context) error {
 }
 
 // Run subscribes to the validated queue and processes events until ctx is
-// cancelled. Each event is checked for expiration, pushed into the priority
-// queue, and then the queue is drained in priority order to team queues.
+// cancelled. Each event is pushed into the priority queue and then the queue
+// is drained in priority order to team queues.
 func (o *Organizer) Run(ctx context.Context) error {
 	sub, err := o.broker.Subscribe(ctx, broker.ConsumeOptions{
 		Queue:   QueueValidated,
@@ -176,14 +174,7 @@ func (o *Organizer) handleDelivery(ctx context.Context, d broker.Delivery) {
 		return
 	}
 
-	now := time.Now()
-	ev.SetReceived(now)
-
-	// Check expiration.
-	if ev.IsExpired(now) {
-		o.publishExpired(ctx, &ev)
-		return
-	}
+	ev.SetReceived(time.Now())
 
 	team := ev.Team()
 	if team == event.TeamUnknown {
@@ -191,20 +182,26 @@ func (o *Organizer) handleDelivery(ctx context.Context, d broker.Delivery) {
 		return
 	}
 
-	// Push into priority queue, then drain.
+	// Push into priority queue, drain under lock, then route outside the lock
+	// so that broker.Publish (potential network I/O) does not hold the mutex.
 	o.mu.Lock()
 	heap.Push(&o.pq, &ev)
-	o.drainLocked(ctx)
+	batch := o.drainLocked()
 	o.mu.Unlock()
+
+	for _, e := range batch {
+		o.routeEvent(ctx, e)
+	}
 }
 
-// drainLocked pops all events from the priority queue and routes them.
+// drainLocked pops all events from the priority queue and returns them.
 // Caller must hold o.mu.
-func (o *Organizer) drainLocked(ctx context.Context) {
+func (o *Organizer) drainLocked() []*event.Event {
+	var batch []*event.Event
 	for o.pq.Len() > 0 {
-		ev := heap.Pop(&o.pq).(*event.Event)
-		o.routeEvent(ctx, ev)
+		batch = append(batch, heap.Pop(&o.pq).(*event.Event))
 	}
+	return batch
 }
 
 func (o *Organizer) routeEvent(ctx context.Context, ev *event.Event) {
@@ -249,8 +246,7 @@ func (o *Organizer) publishExpired(ctx context.Context, ev *event.Event) {
 // Stats returns a snapshot of the organizer's processing counters.
 func (o *Organizer) Stats() Stats {
 	return Stats{
-		Routed:    o.routed.Load(),
-		Expired:   o.expired.Load(),
-		MultiTeam: o.multiTeam.Load(),
+		Routed:  o.routed.Load(),
+		Expired: o.expired.Load(),
 	}
 }

@@ -65,8 +65,12 @@ func (c *Config) Validate() error {
 	if _, err := os.Stat(c.Dataset); err != nil {
 		return fmt.Errorf("dataset file: %w", err)
 	}
-	if _, err := url.ParseRequestURI(c.RabbitMQURL); err != nil {
+	u, err := url.Parse(c.RabbitMQURL)
+	if err != nil {
 		return fmt.Errorf("invalid rabbitmq-url: %w", err)
+	}
+	if u.Scheme != "amqp" && u.Scheme != "amqps" {
+		return fmt.Errorf("invalid rabbitmq-url: scheme must be amqp or amqps, got %q", u.Scheme)
 	}
 	return nil
 }
