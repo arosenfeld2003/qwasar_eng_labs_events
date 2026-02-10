@@ -79,7 +79,9 @@ func TestRabbitMQCloseWithoutConnection(t *testing.T) {
 
 func TestRabbitMQDoubleClose(t *testing.T) {
 	r := &RabbitMQ{}
-	r.Close()
+	if err := r.Close(); err != nil {
+		t.Fatalf("first Close should not error: %v", err)
+	}
 	if err := r.Close(); err != nil {
 		t.Fatalf("second Close should not error: %v", err)
 	}

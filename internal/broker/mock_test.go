@@ -323,7 +323,9 @@ func TestMockBrokerDeliveryCallbacks(t *testing.T) {
 	}
 	defer func() { _ = sub.Cancel() }()
 
-	b.Publish(ctx, Message{Body: []byte("test")}, PublishOptions{RoutingKey: "q1"})
+	if err := b.Publish(ctx, Message{Body: []byte("test")}, PublishOptions{RoutingKey: "q1"}); err != nil {
+		t.Fatal(err)
+	}
 	d := receiveDelivery(t, sub.Deliveries)
 
 	if err := d.Ack(false); err != nil {
