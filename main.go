@@ -1,36 +1,31 @@
 package main
 
 import (
-	"flag"
-	"fmt"
+	"log"
 	"net/http"
 	"os"
-
-	"github.com/arosenfeld2003/qwasar_eng_labs_events/internal/logger"
 )
 
-func main() {
-	// Read RabbitMQ URL from env (even if we don't use it yet)
-	rabbitURL := os.Getenv("RABBITMQ_URL")
-	log.Printf("Starting marry-me service. RABBITMQ_URL=%q\n", rabbitURL)
-
-	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+// newMux builds the HTTP handlers used by the service. Exported for tests.
+func newMux() *http.ServeMux {
+	mux := http.NewServeMux()
+	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		_, _ = w.Write([]byte(`{"status":"ok"}`))
 	})
-
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(w, "marry-me Go service is running 🚀")
+		w.WriteHeader(http.StatusOK)
+		_, _ = w.Write([]byte("marry-me Go service is running 🚀"))
 	})
-
 	return mux
 }
 
 func main() {
 	rabbitURL := os.Getenv("RABBITMQ_URL")
-	log.Printf("Starting marry-me service. RABBITMQ_URL=%q\n", rabbitURL)
+	log.Printf("Starting marry-me service. RABBITMQ_URL=%q", rabbitURL)
 
+	mux := newMux()
 	port := "8080"
 	log.Printf("Listening on :%s", port)
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	log.Fatal(http.ListenAndServe(":"+port, mux))
 }
