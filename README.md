@@ -1,4 +1,126 @@
 # Engineering Lab - Marry Me
+---
+
+## Getting Started
+
+### Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/) + Docker Compose **or** [Go 1.22+](https://go.dev/dl/) with a local [RabbitMQ](https://www.rabbitmq.com/download.html)
+
+---
+
+### Option 1: Run with Docker (Recommended)
+
+```bash
+git clone https://github.com/arosenfeld2003/qwasar_eng_labs_events.git
+cd qwasar_eng_labs_events
+
+# Start RabbitMQ and the app together
+docker compose up --build
+```
+
+Endpoints after startup:
+
+| URL | Description |
+|-----|-------------|
+| `http://localhost:8080/` | App liveness check |
+| `http://localhost:8080/health` | JSON health check (`{"status":"ok"}`) |
+| `http://localhost:15672` | RabbitMQ Management UI (user: `admin`, pass: `password`) |
+
+```bash
+# Tear down
+docker compose down
+```
+
+---
+
+### Option 2: Run Tests Locally (no Docker needed)
+
+```bash
+# Clone and enter project
+git clone https://github.com/arosenfeld2003/qwasar_eng_labs_events.git
+cd qwasar_eng_labs_events
+
+# Download dependencies
+go mod download
+
+# Run unit tests only (MockBroker - no RabbitMQ required)
+go test -short ./...
+
+# Run all tests with race detection (requires RabbitMQ)
+go test -v -race ./...
+
+# Run tests with HTML coverage report
+go test -coverprofile=coverage.out ./...
+go tool cover -html=coverage.out
+```
+
+> **Tip:** Use the `-short` flag to skip any test that requires a live RabbitMQ connection. All unit tests pass in short mode.
+
+---
+
+### Option 3: Build and Run the Binary
+
+```bash
+# Requires RabbitMQ already running locally (default port 5672)
+export RABBITMQ_URL=amqp://guest:guest@localhost:5672
+
+# Build
+go build -o marry-me .
+
+# Run
+./marry-me
+```
+
+---
+
+### Dataset Format
+
+Five sample datasets live in `datasets/`. Each is a JSON array of events:
+
+```json
+[
+  {
+    "id": 1,
+    "event_type": "feeling_ill",
+    "priority": "High",
+    "description": "Guest has stomach ache after eating five pieces of cake",
+    "timestamp": "05:37"
+  }
+]
+```
+
+| Field | Type | Values |
+|-------|------|--------|
+| `id` | int | unique event identifier |
+| `event_type` | string | `brawl`, `not_on_list`, `accident`, `dirty_table`, `broken_itens`, `dirty_floor`, `bad_food`, `music`, `feeling_ill`, `bride`, `groom` |
+| `priority` | string | `High` (5 s deadline), `Medium` (10 s), `Low` (15 s) |
+| `timestamp` | string | `HH:MM` offset from ceremony start (6-minute simulation window) |
+
+To regenerate datasets:
+
+```bash
+python3 generate_datasets.py
+```
+
+---
+
+### Makefile Targets
+
+```bash
+make test          # Run all tests with race detection
+make test-short    # Unit tests only (no RabbitMQ)
+make test-coverage # Tests + HTML coverage report
+make fmt           # Format source with gofmt
+make vet           # Run go vet
+make lint          # Run golangci-lint (requires install)
+make build         # Compile binary to bin/marry-me
+make docker-build  # Build Docker image
+make docker-up     # Start via docker-compose
+make docker-down   # Stop docker-compose services
+```
+
+---
 
 
 **Problem Statement**  
