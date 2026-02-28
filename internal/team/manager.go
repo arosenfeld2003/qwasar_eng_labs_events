@@ -101,6 +101,8 @@ func (m *Manager) Setup(ctx context.Context) error {
 		event.TeamFloral,
 		event.TeamVenue,
 		event.TeamTransport,
+		event.TeamSecurity,
+		event.TeamMedical,
 	}
 
 	// Wait for all intake subscriptions to be ready
