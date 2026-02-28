@@ -25,10 +25,10 @@ func TestManagerSetup(t *testing.T) {
 		t.Fatalf("setup error: %v", err)
 	}
 
-	// Verify all 8 teams were initialized
+	// Verify all 10 teams were initialized
 	allStats := m.AllStats()
-	if len(allStats) != 8 {
-		t.Fatalf("expected 8 teams, got %d", len(allStats))
+	if len(allStats) != 10 {
+		t.Fatalf("expected 10 teams, got %d", len(allStats))
 	}
 
 	// Verify each team has a Stats entry
@@ -41,6 +41,8 @@ func TestManagerSetup(t *testing.T) {
 		event.TeamFloral,
 		event.TeamVenue,
 		event.TeamTransport,
+		event.TeamSecurity,
+		event.TeamMedical,
 	}
 	for _, team := range teams {
 		if _, ok := allStats[team]; !ok {
