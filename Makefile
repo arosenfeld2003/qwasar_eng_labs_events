@@ -1,8 +1,9 @@
-.PHONY: build test test-short clean lint fmt vet run
+.PHONY: build build-watcher test test-short clean lint fmt vet run watch
 
 # Binary output directory
 BIN_DIR := bin
 BINARY := $(BIN_DIR)/marry-me
+WATCHER := $(BIN_DIR)/demo-watcher
 
 # Go parameters
 GOCMD := go
@@ -18,10 +19,19 @@ LDFLAGS := -ldflags="-s -w"
 # Default target
 all: build
 
-# Build the binary
+# Build the simulation binary
 build:
 	@mkdir -p $(BIN_DIR)
 	$(GOBUILD) $(LDFLAGS) -o $(BINARY) ./cmd/marry-me
+
+# Build the live pipeline monitor
+build-watcher:
+	@mkdir -p $(BIN_DIR)
+	$(GOBUILD) $(LDFLAGS) -o $(WATCHER) ./cmd/demo-watcher
+
+# Run the live pipeline monitor (RabbitMQ must be running)
+watch: build-watcher
+	$(WATCHER) --speed=5.0 --workers=3
 
 # Run all tests
 test:
@@ -80,7 +90,9 @@ docker-down:
 # Help
 help:
 	@echo "Available targets:"
-	@echo "  build          - Build the binary"
+	@echo "  build          - Build the simulation binary"
+	@echo "  build-watcher  - Build the live pipeline monitor"
+	@echo "  watch          - Build and run the live pipeline monitor"
 	@echo "  test           - Run all tests with race detection"
 	@echo "  test-short     - Run tests without integration tests"
 	@echo "  test-coverage  - Run tests with coverage report"

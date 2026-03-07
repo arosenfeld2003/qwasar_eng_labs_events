@@ -47,10 +47,25 @@ Dataset (JSON)
 
 ## Event Processing Rules
 
-- **Priorities**: High (5s deadline), Medium (10s), Low (20s)
+- **Priorities**: High (5s deadline), Medium (10s), Low (15s)
 - **Processing time**: 3 seconds per event
 - **Worker routines**: Standard (20s work / 5s idle), Intermittent (5s/5s), Concentrated (60s/60s)
-- **10 Teams**: Catering, Decoration, Photography, Music, Coordinator, Floral, Venue, Transport, Security, Medical
+- **Simulation window**: 6 wedding hours (00:00–06:00); 1 real second = 1 wedding minute
+- **10 Teams** with assigned routines:
+
+| Team | Routine | Work / Idle |
+|------|---------|-------------|
+| Catering | Concentrated | 60s / 60s |
+| Coordinator | Concentrated | 60s / 60s |
+| Venue | Intermittent | 5s / 5s |
+| Medical | Intermittent | 5s / 5s |
+| Security | Standard | 20s / 5s |
+| Decoration | Standard | 20s / 5s |
+| Photography | Standard | 20s / 5s |
+| Music | Standard | 20s / 5s |
+| Floral | Standard | 20s / 5s |
+| Transport | Standard | 20s / 5s |
+
 - **Stress Level** = Expired Events / Total Events
 
 ## Quick Start
@@ -68,17 +83,18 @@ make test-coverage       # Generate coverage report
 **Option A — Run locally against Docker RabbitMQ**
 
 ```bash
-# 1. Start RabbitMQ (uses admin/password credentials)
+# 1. Start RabbitMQ
 docker-compose up -d rabbitmq
 
 # 2. Wait ~10s for RabbitMQ to be ready, then build
 make build
 
-# 3. Run — RabbitMQ URL must match the docker-compose credentials
+# 3. Run — use --speed=5.0 to complete in ~72s instead of 6 minutes
 ./bin/marry-me \
   --rabbitmq-url=amqp://admin:password@localhost:5672/ \
   --dataset=datasets/dataset_1.json \
   --workers=3 \
+  --speed=5.0 \
   --report=report.json
 ```
 
@@ -91,6 +107,16 @@ docker-compose up
 > The app container waits for RabbitMQ to pass its health check before starting.
 > Logs from both services stream to your terminal.
 
+### RabbitMQ Management UI
+
+While the simulation runs, open the management console to watch queues fill and drain live:
+
+- **URL**: http://localhost:15672
+- **Username**: `admin`
+- **Password**: `password`
+
+> Use port **15672** for the browser UI. Port 5672 is the AMQP wire protocol.
+
 ### CLI Flags
 
 ```
@@ -102,28 +128,49 @@ docker-compose up
 --verbose       Enable verbose logging
 ```
 
+### Simulation Timing
+
+The wedding spans 6 hours (00:00–06:00). Each real second = 1 wedding minute. Events are released at their scheduled wedding timestamp.
+
+| `--speed` | Real duration | Use case |
+|-----------|--------------|----------|
+| `1.0`     | 6 min 0s     | Full fidelity |
+| `5.0`     | 1 min 12s    | Demo / development |
+| `10.0`    | 36s          | Quick smoke test |
+
 ## Sample Output
 
 ```
+2026/03/07 09:45:46 Pipeline ready. Simulating 6-hour wedding over 1m12s (speed 5.0x)...
+2026/03/07 09:46:58 Simulation complete.
+2026/03/07 09:46:58 All events dispatched: 992 accepted, 0 rejected
+
 ========================================
      WEDDING STRESS REPORT
 ========================================
-  Total Events:    150
-  Completed:       112
-  Expired:         38
-  Overall Stress:  25.3%
+  Total Events:    713
+  Completed:       677
+  Expired:         36
+  Overall Stress:  5.0%
 
   By Priority:
-    High       45 total |  28 completed |  17 expired | stress 37.8%
-    Medium     55 total |  42 completed |  13 expired | stress 23.6%
-    Low        50 total |  42 completed |   8 expired | stress 16.0%
+    High     249 total | 221 completed |  28 expired | stress 11.2%
+    Medium   217 total | 209 completed |   8 expired | stress  3.7%
+    Low      247 total | 247 completed |   0 expired | stress  0.0%
 
   By Team:
-    catering       18 total |  14 completed |   4 expired | stress 22.2%
-    music          12 total |   9 completed |   3 expired | stress 25.0%
-    ...
+    catering      98 total |  86 completed |  12 expired | stress 12.2%
+    coordinator  208 total | 184 completed |  24 expired | stress 11.5%
+    venue        143 total | 143 completed |   0 expired | stress  0.0%
+    security     143 total | 143 completed |   0 expired | stress  0.0%
+    medical       38 total |  38 completed |   0 expired | stress  0.0%
+    music         42 total |  42 completed |   0 expired | stress  0.0%
+    decoration    41 total |  41 completed |   0 expired | stress  0.0%
 ========================================
 ```
+
+> Catering and Coordinator (Concentrated routine: 60s/60s) accumulate stress on high-priority events.
+> Teams on Intermittent (Venue, Medical) and Standard (Security, others) routines reach 0% stress.
 
 ## Design Decisions
 

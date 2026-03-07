@@ -112,14 +112,25 @@ func (w *Worker) Run(ctx context.Context) error {
             }
             // Make sure we have the latest state before accepting
             updateIdle()
-            if !idle {
-                // Not accepting events while working.
-                continue
-            }
 
             var ev event.Event
             if err := json.Unmarshal(d.Body, &ev); err != nil {
                 log.Printf("worker: unmarshal event: %v", err)
+                continue
+            }
+
+            if !idle {
+                // Worker is in work phase — cannot accept new events.
+                // If the event is already past its deadline, report it as expired.
+                // Otherwise put it back in the queue so another worker can pick it up.
+                if ev.IsExpired(time.Now()) {
+                    ev.Status = event.StatusExpired
+                    re := stress.ResultEvent{Event: ev}
+                    b, _ := json.Marshal(re)
+                    _ = w.Broker.Publish(context.Background(), broker.Message{Body: b, ContentType: "application/json"}, broker.PublishOptions{RoutingKey: organizer.QueueResults})
+                } else {
+                    _ = w.Broker.Publish(context.Background(), broker.Message{Body: d.Body, ContentType: "application/json"}, broker.PublishOptions{RoutingKey: organizer.TeamQueue(w.Team)})
+                }
                 continue
             }
 

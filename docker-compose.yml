@@ -5,8 +5,8 @@ services:
     image: rabbitmq:3-management
     container_name: marry-me-rabbitmq
     ports:
-      - "5672:5672"   # AMQP
-      - "15672:15672" # Management UI
+      - "127.0.0.1:5672:5672"   # AMQP — localhost only
+      - "127.0.0.1:15672:15672" # Management UI — localhost only
     environment:
       RABBITMQ_DEFAULT_USER: admin
       RABBITMQ_DEFAULT_PASS: password

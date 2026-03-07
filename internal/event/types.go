@@ -24,7 +24,7 @@ func (p Priority) DeadlineDuration() time.Duration {
 	case PriorityMedium:
 		return 10 * time.Second
 	case PriorityLow:
-		return 20 * time.Second
+		return 15 * time.Second
 	default:
 		return 10 * time.Second
 	}
