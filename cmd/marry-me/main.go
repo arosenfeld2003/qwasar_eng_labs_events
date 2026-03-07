@@ -67,7 +67,7 @@ func main() {
 	}
 
 	// 3. Setup team manager (creates workers, subscribes to team queues)
-	mgr := team.New(b, cfg.Workers)
+	mgr := team.New(b, cfg.Workers, cfg.Speed)
 	if err := mgr.Setup(ctx); err != nil {
 		log.Fatalf("team manager setup: %v", err)
 	}
