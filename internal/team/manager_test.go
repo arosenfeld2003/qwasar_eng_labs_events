@@ -20,174 +20,109 @@ func TestManagerSetup(t *testing.T) {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
-	m := New(mb, 2)
+	m := New(mb, 2, 1.0)
 	if err := m.Setup(ctx); err != nil {
 		t.Fatalf("setup error: %v", err)
 	}
 
-	// Verify all 10 teams were initialized
-	allStats := m.AllStats()
-	if len(allStats) != 10 {
-		t.Fatalf("expected 10 teams, got %d", len(allStats))
-	}
-
-	// Verify each team has a Stats entry
-	teams := []event.Team{
-		event.TeamCatering,
-		event.TeamDecoration,
-		event.TeamPhotography,
-		event.TeamMusic,
-		event.TeamCoordinator,
-		event.TeamFloral,
-		event.TeamVenue,
-		event.TeamTransport,
-		event.TeamSecurity,
-		event.TeamMedical,
-	}
-	for _, team := range teams {
-		if _, ok := allStats[team]; !ok {
-			t.Errorf("missing stats for team %s", team)
-		}
+	// Verify all 10 teams were initialized.
+	m.mu.Lock()
+	got := len(m.teams)
+	m.mu.Unlock()
+	if got != 10 {
+		t.Fatalf("expected 10 teams, got %d", got)
 	}
 }
 
-func TestManagerAcceptsEventsInPriorityOrder(t *testing.T) {
+func TestManagerWorkersProcessEvents(t *testing.T) {
 	mb := broker.NewMockBroker()
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
-	// Declare team queue
+	// Declare queues the organizer would normally set up.
 	_, _ = mb.DeclareQueue(ctx, organizer.TeamQueue(event.TeamCatering), broker.QueueOptions{Durable: true})
-
-	m := New(mb, 1)
-	if err := m.Setup(ctx); err != nil {
-		t.Fatalf("setup error: %v", err)
-	}
-
-	// Publish events in reverse priority order
-	now := time.Now()
-	evLow := makeEvent(1, event.TypeMealService, event.PriorityLow)
-	evLow.ReceivedAt = now
-	evLow.Deadline = now.Add(10 * time.Second)
-
-	evHigh := makeEvent(2, event.TypeMealService, event.PriorityHigh)
-	evHigh.ReceivedAt = now
-	evHigh.Deadline = now.Add(10 * time.Second)
-
-	evMedium := makeEvent(3, event.TypeMealService, event.PriorityMedium)
-	evMedium.ReceivedAt = now
-	evMedium.Deadline = now.Add(10 * time.Second)
-
-	// Publish in order: Low, High, Medium
-	for _, ev := range []event.Event{evLow, evHigh, evMedium} {
-		b, _ := json.Marshal(ev)
-		_ = mb.Publish(ctx, broker.Message{Body: b, ContentType: "application/json"},
-			broker.PublishOptions{RoutingKey: organizer.TeamQueue(event.TeamCatering)})
-	}
-
-	// Give time for events to be queued
-	time.Sleep(100 * time.Millisecond)
-
-	// Check pending count
-	stats := m.Stats(event.TeamCatering)
-	if stats.Pending != 3 {
-		t.Fatalf("expected 3 pending events, got %d", stats.Pending)
-	}
-}
-
-func TestManagerChecksExpirationPeriodically(t *testing.T) {
-	mb := broker.NewMockBroker()
-	ctx, cancel := context.WithCancel(context.Background())
-	defer cancel()
-
-	_, _ = mb.DeclareQueue(ctx, organizer.TeamQueue(event.TeamDecoration), broker.QueueOptions{Durable: true})
 	_, _ = mb.DeclareQueue(ctx, organizer.QueueResults, broker.QueueOptions{Durable: true})
 
-	resSub, _ := mb.Subscribe(ctx, broker.ConsumeOptions{Queue: organizer.QueueResults, AutoAck: true})
+	resSub, err := mb.Subscribe(ctx, broker.ConsumeOptions{Queue: organizer.QueueResults, AutoAck: true})
+	if err != nil {
+		t.Fatalf("subscribe results: %v", err)
+	}
 
-	m := New(mb, 1)
-	// Use shorter expiration check for test
-	m.expirationCheck = 50 * time.Millisecond
+	// speed=50: work=400ms, idle=100ms, processing=60ms — comfortable windows for testing.
+	m := New(mb, 1, 50.0)
 	if err := m.Setup(ctx); err != nil {
 		t.Fatalf("setup error: %v", err)
 	}
 
-	// Publish an event that will expire quickly
+	// Wait 450ms to be 50ms into the idle phase (work=400ms).
+	time.Sleep(450 * time.Millisecond)
+
+	// Publish an event with a generous deadline.
 	now := time.Now()
-	ev := makeEvent(10, event.TypeTableSetup, event.PriorityHigh)
+	ev := makeEvent(1, event.TypeMealService, event.PriorityLow)
 	ev.ReceivedAt = now
-	ev.Deadline = now.Add(50 * time.Millisecond) // Will expire soon
+	ev.Deadline = now.Add(10 * time.Second)
 	b, _ := json.Marshal(ev)
 	_ = mb.Publish(ctx, broker.Message{Body: b, ContentType: "application/json"},
-		broker.PublishOptions{RoutingKey: organizer.TeamQueue(event.TeamDecoration)})
+		broker.PublishOptions{RoutingKey: organizer.TeamQueue(event.TeamCatering)})
 
-	// Give time for intake and expiration check
-	time.Sleep(200 * time.Millisecond)
-
-	// Verify stats: pending should be 0, expired should be 1
-	stats := m.Stats(event.TeamDecoration)
-	if stats.Pending != 0 {
-		t.Fatalf("expected 0 pending after expiration, got %d", stats.Pending)
-	}
-	if stats.Expired != 1 {
-		t.Fatalf("expected 1 expired, got %d", stats.Expired)
-	}
-
-	// Verify expired event was published to results queue
+	// Allow processing (60ms) plus generous margin.
 	select {
 	case d := <-resSub.Deliveries:
-		var resultEv event.Event
-		if err := json.Unmarshal(d.Body, &resultEv); err != nil {
+		var wrapper struct {
+			Event event.Event `json:"event"`
+		}
+		if err := json.Unmarshal(d.Body, &wrapper); err != nil {
 			t.Fatalf("unmarshal result: %v", err)
 		}
-		if resultEv.Status != event.StatusExpired {
-			t.Fatalf("expected expired status, got %s", resultEv.Status)
+		if wrapper.Event.Status != event.StatusCompleted {
+			t.Fatalf("expected completed, got %s", wrapper.Event.Status)
 		}
 	case <-time.After(500 * time.Millisecond):
-		t.Fatalf("timeout waiting for expired event on results queue")
+		t.Fatal("timeout: no result received")
 	}
 }
 
-func TestManagerMultipleTeams(t *testing.T) {
+func TestManagerShutdown(t *testing.T) {
 	mb := broker.NewMockBroker()
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
-	// Declare queues for two teams
-	_, _ = mb.DeclareQueue(ctx, organizer.TeamQueue(event.TeamCatering), broker.QueueOptions{Durable: true})
-	_, _ = mb.DeclareQueue(ctx, organizer.TeamQueue(event.TeamPhotography), broker.QueueOptions{Durable: true})
-
-	m := New(mb, 1)
+	m := New(mb, 1, 1.0)
 	if err := m.Setup(ctx); err != nil {
 		t.Fatalf("setup error: %v", err)
 	}
 
-	now := time.Now()
-	// Publish to catering
-	ev1 := makeEvent(1, event.TypeMealService, event.PriorityHigh)
-	ev1.ReceivedAt = now
-	ev1.Deadline = now.Add(10 * time.Second)
-	b1, _ := json.Marshal(ev1)
-	_ = mb.Publish(ctx, broker.Message{Body: b1, ContentType: "application/json"},
-		broker.PublishOptions{RoutingKey: organizer.TeamQueue(event.TeamCatering)})
-
-	// Publish to photography
-	ev2 := makeEvent(2, event.TypePhotoSession, event.PriorityMedium)
-	ev2.ReceivedAt = now
-	ev2.Deadline = now.Add(10 * time.Second)
-	b2, _ := json.Marshal(ev2)
-	_ = mb.Publish(ctx, broker.Message{Body: b2, ContentType: "application/json"},
-		broker.PublishOptions{RoutingKey: organizer.TeamQueue(event.TeamPhotography)})
-
-	time.Sleep(100 * time.Millisecond)
-
-	cateringStats := m.Stats(event.TeamCatering)
-	photoStats := m.Stats(event.TeamPhotography)
-
-	if cateringStats.Pending != 1 {
-		t.Fatalf("catering: expected 1 pending, got %d", cateringStats.Pending)
+	if err := m.Shutdown(context.Background()); err != nil {
+		t.Fatalf("shutdown error: %v", err)
 	}
-	if photoStats.Pending != 1 {
-		t.Fatalf("photography: expected 1 pending, got %d", photoStats.Pending)
+}
+
+func TestManagerSpeedScaling(t *testing.T) {
+	mb := broker.NewMockBroker()
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
+	// speed=10 → work=2s, idle=0.5s, processing=0.3s
+	m := New(mb, 1, 10.0)
+	if err := m.Setup(ctx); err != nil {
+		t.Fatalf("setup error: %v", err)
+	}
+
+	m.mu.Lock()
+	ts, ok := m.teams[event.TeamCatering]
+	m.mu.Unlock()
+	if !ok || len(ts.workers) != 1 {
+		t.Fatal("expected 1 catering worker")
+	}
+
+	w := ts.workers[0]
+	wantProcessing := time.Duration(float64(3*time.Second) / 10.0)
+	if w.ProcessingTime != wantProcessing {
+		t.Fatalf("processing time: got %v, want %v", w.ProcessingTime, wantProcessing)
+	}
+	wantWork := time.Duration(float64(20*time.Second) / 10.0)
+	if w.Routine.Work != wantWork {
+		t.Fatalf("work duration: got %v, want %v", w.Routine.Work, wantWork)
 	}
 }

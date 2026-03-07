@@ -65,17 +65,31 @@ make test-coverage       # Generate coverage report
 
 ### Run the Simulation (requires RabbitMQ)
 
+**Option A — Run locally against Docker RabbitMQ**
+
 ```bash
-# Start RabbitMQ
+# 1. Start RabbitMQ (uses admin/password credentials)
 docker-compose up -d rabbitmq
 
-# Build and run
+# 2. Wait ~10s for RabbitMQ to be ready, then build
 make build
-./bin/marry-me --dataset=datasets/dataset_1.json --workers=3 --report=report.json
 
-# Or via Docker
+# 3. Run — RabbitMQ URL must match the docker-compose credentials
+./bin/marry-me \
+  --rabbitmq-url=amqp://admin:password@localhost:5672/ \
+  --dataset=datasets/dataset_1.json \
+  --workers=3 \
+  --report=report.json
+```
+
+**Option B — Run everything in Docker (RabbitMQ + app together)**
+
+```bash
 docker-compose up
 ```
+
+> The app container waits for RabbitMQ to pass its health check before starting.
+> Logs from both services stream to your terminal.
 
 ### CLI Flags
 
