@@ -91,8 +91,8 @@ func main() {
 
 	log.Println("Pipeline ready. Ingesting events...")
 
-	// 5. Ingest events through coordinator
-	if err := coord.Ingest(ctx, events); err != nil {
+	// 5. Ingest events through coordinator (scheduled by timestamp, compressed by speed)
+	if err := coord.Ingest(ctx, events, cfg.Speed); err != nil {
 		log.Fatalf("ingest events: %v", err)
 	}
 
@@ -104,8 +104,8 @@ func main() {
 	select {
 	case <-sigCh:
 		log.Println("Shutting down...")
-	case <-time.After(90 * time.Second):
-		log.Println("Simulation timeout reached.")
+	case <-time.After(time.Duration(float64(360*time.Second) / cfg.Speed)):
+		log.Println("Simulation complete.")
 	}
 
 	cancel()

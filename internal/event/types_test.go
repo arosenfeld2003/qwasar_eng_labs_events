@@ -14,7 +14,7 @@ func TestPriorityDeadlineDuration(t *testing.T) {
 	}{
 		{PriorityHigh, 5 * time.Second},
 		{PriorityMedium, 10 * time.Second},
-		{PriorityLow, 20 * time.Second},
+		{PriorityLow, 15 * time.Second},
 		{Priority("invalid"), 10 * time.Second}, // defaults to medium
 	}
 

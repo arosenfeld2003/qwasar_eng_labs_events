@@ -66,13 +66,31 @@ func (m *Manager) Setup(ctx context.Context) error {
 	return nil
 }
 
+// teamRoutine returns the work/idle routine for each team.
+//
+// Mapping rationale (per spec + event types):
+//   Concentrated (60s/60s): Catering (spec), Coordinator (Officiant equivalent — ceremony mgmt)
+//   Intermittent  (5s/5s):  Venue (Clean_up equivalent — cleanup/seating), Medical (emergency response)
+//   Standard     (20s/5s):  Security (spec), Decoration, Photography, Music, Floral, Transport
+func teamRoutine(t event.Team) worker.Routine {
+	switch t {
+	case event.TeamCatering, event.TeamCoordinator:
+		return worker.DefaultRoutines[worker.RoutineConcentrated]
+	case event.TeamVenue, event.TeamMedical:
+		return worker.DefaultRoutines[worker.RoutineIntermittent]
+	default: // Security, Decoration, Photography, Music, Floral, Transport
+		return worker.DefaultRoutines[worker.RoutineStandard]
+	}
+}
+
 func (m *Manager) setupTeam(ctx context.Context, t event.Team) error {
 	tctx, cancel := context.WithCancel(ctx)
 
 	// Scale work/idle durations by speed multiplier.
+	base := teamRoutine(t)
 	routine := worker.Routine{
-		Work: time.Duration(float64(20*time.Second) / m.speed),
-		Idle: time.Duration(float64(5*time.Second) / m.speed),
+		Work: time.Duration(float64(base.Work) / m.speed),
+		Idle: time.Duration(float64(base.Idle) / m.speed),
 	}
 
 	workers := make([]*worker.Worker, m.workersPerTeam)
