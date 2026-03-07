@@ -1,9 +1,6489 @@
 {
-  "overall_stress": 0,
-  "total_events": 0,
-  "completed": 0,
-  "expired": 0,
-  "by_priority": {},
-  "by_team": {},
-  "durations": null
+  "overall_stress": 0.05049088359046283,
+  "total_events": 713,
+  "completed": 677,
+  "expired": 36,
+  "by_priority": {
+    "High": {
+      "total": 249,
+      "completed": 221,
+      "expired": 28,
+      "stress": 0.11244979919678715
+    },
+    "Low": {
+      "total": 247,
+      "completed": 247,
+      "expired": 0,
+      "stress": 0
+    },
+    "Medium": {
+      "total": 217,
+      "completed": 209,
+      "expired": 8,
+      "stress": 0.03686635944700461
+    }
+  },
+  "by_team": {
+    "catering": {
+      "total": 98,
+      "completed": 86,
+      "expired": 12,
+      "stress": 0.12244897959183673
+    },
+    "coordinator": {
+      "total": 208,
+      "completed": 184,
+      "expired": 24,
+      "stress": 0.11538461538461539
+    },
+    "decoration": {
+      "total": 41,
+      "completed": 41,
+      "expired": 0,
+      "stress": 0
+    },
+    "medical": {
+      "total": 38,
+      "completed": 38,
+      "expired": 0,
+      "stress": 0
+    },
+    "music": {
+      "total": 42,
+      "completed": 42,
+      "expired": 0,
+      "stress": 0
+    },
+    "security": {
+      "total": 143,
+      "completed": 143,
+      "expired": 0,
+      "stress": 0
+    },
+    "venue": {
+      "total": 143,
+      "completed": 143,
+      "expired": 0,
+      "stress": 0
+    }
+  },
+  "durations": [
+    {
+      "event_id": 794,
+      "event_type": "dirty_table",
+      "priority": "Low",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 600973000,
+      "duration": "600.973ms"
+    },
+    {
+      "event_id": 22,
+      "event_type": "feeling_ill",
+      "priority": "High",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 601714000,
+      "duration": "601.714ms"
+    },
+    {
+      "event_id": 492,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601870000,
+      "duration": "601.87ms"
+    },
+    {
+      "event_id": 58,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602204000,
+      "duration": "602.204ms"
+    },
+    {
+      "event_id": 567,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601991000,
+      "duration": "601.991ms"
+    },
+    {
+      "event_id": 396,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602683000,
+      "duration": "602.683ms"
+    },
+    {
+      "event_id": 529,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 601547000,
+      "duration": "601.547ms"
+    },
+    {
+      "event_id": 773,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 604120000,
+      "duration": "604.12ms"
+    },
+    {
+      "event_id": 755,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 601148000,
+      "duration": "601.148ms"
+    },
+    {
+      "event_id": 710,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 603263000,
+      "duration": "603.263ms"
+    },
+    {
+      "event_id": 197,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603508000,
+      "duration": "603.508ms"
+    },
+    {
+      "event_id": 551,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 602878000,
+      "duration": "602.878ms"
+    },
+    {
+      "event_id": 482,
+      "event_type": "not_on_list",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603865000,
+      "duration": "603.865ms"
+    },
+    {
+      "event_id": 436,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601405000,
+      "duration": "601.405ms"
+    },
+    {
+      "event_id": 256,
+      "event_type": "not_on_list",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600954000,
+      "duration": "600.954ms"
+    },
+    {
+      "event_id": 614,
+      "event_type": "not_on_list",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600850000,
+      "duration": "600.85ms"
+    },
+    {
+      "event_id": 19,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 605113000,
+      "duration": "605.113ms"
+    },
+    {
+      "event_id": 237,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600704000,
+      "duration": "600.704ms"
+    },
+    {
+      "event_id": 860,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 600678000,
+      "duration": "600.678ms"
+    },
+    {
+      "event_id": 188,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 600664000,
+      "duration": "600.664ms"
+    },
+    {
+      "event_id": 240,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600559000,
+      "duration": "600.559ms"
+    },
+    {
+      "event_id": 899,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600640000,
+      "duration": "600.64ms"
+    },
+    {
+      "event_id": 543,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601031000,
+      "duration": "601.031ms"
+    },
+    {
+      "event_id": 652,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600660000,
+      "duration": "600.66ms"
+    },
+    {
+      "event_id": 102,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601041000,
+      "duration": "601.041ms"
+    },
+    {
+      "event_id": 478,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601073000,
+      "duration": "601.073ms"
+    },
+    {
+      "event_id": 601,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601506000,
+      "duration": "601.506ms"
+    },
+    {
+      "event_id": 271,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601740000,
+      "duration": "601.74ms"
+    },
+    {
+      "event_id": 949,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601770000,
+      "duration": "601.77ms"
+    },
+    {
+      "event_id": 876,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601940000,
+      "duration": "601.94ms"
+    },
+    {
+      "event_id": 603,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601732000,
+      "duration": "601.732ms"
+    },
+    {
+      "event_id": 937,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601639000,
+      "duration": "601.639ms"
+    },
+    {
+      "event_id": 276,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602274000,
+      "duration": "602.274ms"
+    },
+    {
+      "event_id": 67,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602509000,
+      "duration": "602.509ms"
+    },
+    {
+      "event_id": 215,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602149000,
+      "duration": "602.149ms"
+    },
+    {
+      "event_id": 938,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602204000,
+      "duration": "602.204ms"
+    },
+    {
+      "event_id": 358,
+      "event_type": "dirty_floor",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 803391000,
+      "duration": "803.391ms"
+    },
+    {
+      "event_id": 472,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1405101000,
+      "duration": "1.405101s"
+    },
+    {
+      "event_id": 562,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 998381000,
+      "duration": "998.381ms"
+    },
+    {
+      "event_id": 544,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 601771000,
+      "duration": "601.771ms"
+    },
+    {
+      "event_id": 859,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602130000,
+      "duration": "602.13ms"
+    },
+    {
+      "event_id": 777,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601588000,
+      "duration": "601.588ms"
+    },
+    {
+      "event_id": 278,
+      "event_type": "not_on_list",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601754000,
+      "duration": "601.754ms"
+    },
+    {
+      "event_id": 473,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601984000,
+      "duration": "601.984ms"
+    },
+    {
+      "event_id": 190,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 601879000,
+      "duration": "601.879ms"
+    },
+    {
+      "event_id": 78,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602359000,
+      "duration": "602.359ms"
+    },
+    {
+      "event_id": 299,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602195000,
+      "duration": "602.195ms"
+    },
+    {
+      "event_id": 151,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601936000,
+      "duration": "601.936ms"
+    },
+    {
+      "event_id": 884,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602179000,
+      "duration": "602.179ms"
+    },
+    {
+      "event_id": 290,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602328000,
+      "duration": "602.328ms"
+    },
+    {
+      "event_id": 148,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602158000,
+      "duration": "602.158ms"
+    },
+    {
+      "event_id": 384,
+      "event_type": "dirty_table",
+      "priority": "Medium",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 3997737000,
+      "duration": "3.997737s"
+    },
+    {
+      "event_id": 371,
+      "event_type": "dirty_table",
+      "priority": "Low",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 1199281000,
+      "duration": "1.199281s"
+    },
+    {
+      "event_id": 871,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2194663000,
+      "duration": "2.194663s"
+    },
+    {
+      "event_id": 905,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 601352000,
+      "duration": "601.352ms"
+    },
+    {
+      "event_id": 756,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2398486000,
+      "duration": "2.398486s"
+    },
+    {
+      "event_id": 258,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2403011000,
+      "duration": "2.403011s"
+    },
+    {
+      "event_id": 630,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2200338000,
+      "duration": "2.200338s"
+    },
+    {
+      "event_id": 345,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 600988000,
+      "duration": "600.988ms"
+    },
+    {
+      "event_id": 518,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2198798000,
+      "duration": "2.198798s"
+    },
+    {
+      "event_id": 539,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1998258000,
+      "duration": "1.998258s"
+    },
+    {
+      "event_id": 451,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 603168000,
+      "duration": "603.168ms"
+    },
+    {
+      "event_id": 389,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 802482000,
+      "duration": "802.482ms"
+    },
+    {
+      "event_id": 913,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 606719000,
+      "duration": "606.719ms"
+    },
+    {
+      "event_id": 998,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 605116000,
+      "duration": "605.116ms"
+    },
+    {
+      "event_id": 138,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 601718000,
+      "duration": "601.718ms"
+    },
+    {
+      "event_id": 405,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602216000,
+      "duration": "602.216ms"
+    },
+    {
+      "event_id": 160,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1203756000,
+      "duration": "1.203756s"
+    },
+    {
+      "event_id": 370,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 789525000,
+      "duration": "789.525ms"
+    },
+    {
+      "event_id": 434,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1003492000,
+      "duration": "1.003492s"
+    },
+    {
+      "event_id": 592,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1199427000,
+      "duration": "1.199427s"
+    },
+    {
+      "event_id": 420,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1405104000,
+      "duration": "1.405104s"
+    },
+    {
+      "event_id": 650,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603701000,
+      "duration": "603.701ms"
+    },
+    {
+      "event_id": 177,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603333000,
+      "duration": "603.333ms"
+    },
+    {
+      "event_id": 607,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 603854000,
+      "duration": "603.854ms"
+    },
+    {
+      "event_id": 404,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 604363000,
+      "duration": "604.363ms"
+    },
+    {
+      "event_id": 413,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 3586333000,
+      "duration": "3.586333s"
+    },
+    {
+      "event_id": 569,
+      "event_type": "dirty_table",
+      "priority": "Medium",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 3388835000,
+      "duration": "3.388835s"
+    },
+    {
+      "event_id": 137,
+      "event_type": "dirty_table",
+      "priority": "Medium",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 4601338000,
+      "duration": "4.601338s"
+    },
+    {
+      "event_id": 907,
+      "event_type": "dirty_table",
+      "priority": "Medium",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 2587871000,
+      "duration": "2.587871s"
+    },
+    {
+      "event_id": 206,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3595588000,
+      "duration": "3.595588s"
+    },
+    {
+      "event_id": 564,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1199082000,
+      "duration": "1.199082s"
+    },
+    {
+      "event_id": 126,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2192485000,
+      "duration": "2.192485s"
+    },
+    {
+      "event_id": 408,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4592304000,
+      "duration": "4.592304s"
+    },
+    {
+      "event_id": 8,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2794173000,
+      "duration": "2.794173s"
+    },
+    {
+      "event_id": 680,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4599215000,
+      "duration": "4.599215s"
+    },
+    {
+      "event_id": 827,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3593400000,
+      "duration": "3.5934s"
+    },
+    {
+      "event_id": 449,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4594849000,
+      "duration": "4.594849s"
+    },
+    {
+      "event_id": 220,
+      "event_type": "brawl",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4590952000,
+      "duration": "4.590952s"
+    },
+    {
+      "event_id": 945,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2599907000,
+      "duration": "2.599907s"
+    },
+    {
+      "event_id": 81,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 794565000,
+      "duration": "794.565ms"
+    },
+    {
+      "event_id": 471,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1395562000,
+      "duration": "1.395562s"
+    },
+    {
+      "event_id": 713,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 2198011000,
+      "duration": "2.198011s"
+    },
+    {
+      "event_id": 838,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 4203627000,
+      "duration": "4.203627s"
+    },
+    {
+      "event_id": 908,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2997978000,
+      "duration": "2.997978s"
+    },
+    {
+      "event_id": 798,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2395753000,
+      "duration": "2.395753s"
+    },
+    {
+      "event_id": 351,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2399358000,
+      "duration": "2.399358s"
+    },
+    {
+      "event_id": 391,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2192202000,
+      "duration": "2.192202s"
+    },
+    {
+      "event_id": 758,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2587878000,
+      "duration": "2.587878s"
+    },
+    {
+      "event_id": 955,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 602624000,
+      "duration": "602.624ms"
+    },
+    {
+      "event_id": 746,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602175000,
+      "duration": "602.175ms"
+    },
+    {
+      "event_id": 324,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 602035000,
+      "duration": "602.035ms"
+    },
+    {
+      "event_id": 230,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 602041000,
+      "duration": "602.041ms"
+    },
+    {
+      "event_id": 901,
+      "event_type": "feeling_ill",
+      "priority": "High",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 602000000,
+      "duration": "602ms"
+    },
+    {
+      "event_id": 60,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602301000,
+      "duration": "602.301ms"
+    },
+    {
+      "event_id": 763,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 601953000,
+      "duration": "601.953ms"
+    },
+    {
+      "event_id": 305,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 321,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 323,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 537,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 1201523000,
+      "duration": "1.201523s"
+    },
+    {
+      "event_id": 360,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1599930000,
+      "duration": "1.59993s"
+    },
+    {
+      "event_id": 443,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1406562000,
+      "duration": "1.406562s"
+    },
+    {
+      "event_id": 809,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1595114000,
+      "duration": "1.595114s"
+    },
+    {
+      "event_id": 954,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 599,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603594000,
+      "duration": "603.594ms"
+    },
+    {
+      "event_id": 356,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603568000,
+      "duration": "603.568ms"
+    },
+    {
+      "event_id": 621,
+      "event_type": "feeling_ill",
+      "priority": "Medium",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 604759000,
+      "duration": "604.759ms"
+    },
+    {
+      "event_id": 639,
+      "event_type": "feeling_ill",
+      "priority": "Medium",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 604647000,
+      "duration": "604.647ms"
+    },
+    {
+      "event_id": 898,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 958,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 672,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 225,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 1205988000,
+      "duration": "1.205988s"
+    },
+    {
+      "event_id": 942,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1202757000,
+      "duration": "1.202757s"
+    },
+    {
+      "event_id": 239,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 1593923000,
+      "duration": "1.593923s"
+    },
+    {
+      "event_id": 232,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 798710000,
+      "duration": "798.71ms"
+    },
+    {
+      "event_id": 316,
+      "event_type": "feeling_ill",
+      "priority": "High",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 604212000,
+      "duration": "604.212ms"
+    },
+    {
+      "event_id": 689,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603158000,
+      "duration": "603.158ms"
+    },
+    {
+      "event_id": 624,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603247000,
+      "duration": "603.247ms"
+    },
+    {
+      "event_id": 90,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603532000,
+      "duration": "603.532ms"
+    },
+    {
+      "event_id": 523,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603543000,
+      "duration": "603.543ms"
+    },
+    {
+      "event_id": 868,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603637000,
+      "duration": "603.637ms"
+    },
+    {
+      "event_id": 181,
+      "event_type": "dirty_floor",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 604471000,
+      "duration": "604.471ms"
+    },
+    {
+      "event_id": 106,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 604197000,
+      "duration": "604.197ms"
+    },
+    {
+      "event_id": 969,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603613000,
+      "duration": "603.613ms"
+    },
+    {
+      "event_id": 289,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603634000,
+      "duration": "603.634ms"
+    },
+    {
+      "event_id": 834,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 989696000,
+      "duration": "989.696ms"
+    },
+    {
+      "event_id": 836,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 1198969000,
+      "duration": "1.198969s"
+    },
+    {
+      "event_id": 193,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2395526000,
+      "duration": "2.395526s"
+    },
+    {
+      "event_id": 618,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3594764000,
+      "duration": "3.594764s"
+    },
+    {
+      "event_id": 806,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1794522000,
+      "duration": "1.794522s"
+    },
+    {
+      "event_id": 438,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1196548000,
+      "duration": "1.196548s"
+    },
+    {
+      "event_id": 673,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4591345000,
+      "duration": "4.591345s"
+    },
+    {
+      "event_id": 41,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1995159000,
+      "duration": "1.995159s"
+    },
+    {
+      "event_id": 385,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1999417000,
+      "duration": "1.999417s"
+    },
+    {
+      "event_id": 31,
+      "event_type": "brawl",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2600363000,
+      "duration": "2.600363s"
+    },
+    {
+      "event_id": 334,
+      "event_type": "brawl",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4595996000,
+      "duration": "4.595996s"
+    },
+    {
+      "event_id": 750,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3799495000,
+      "duration": "3.799495s"
+    },
+    {
+      "event_id": 597,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 3201538000,
+      "duration": "3.201538s"
+    },
+    {
+      "event_id": 46,
+      "event_type": "music",
+      "priority": "Medium",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 802422000,
+      "duration": "802.422ms"
+    },
+    {
+      "event_id": 952,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2798032000,
+      "duration": "2.798032s"
+    },
+    {
+      "event_id": 10,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4202862000,
+      "duration": "4.202862s"
+    },
+    {
+      "event_id": 902,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1388598000,
+      "duration": "1.388598s"
+    },
+    {
+      "event_id": 818,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2600122000,
+      "duration": "2.600122s"
+    },
+    {
+      "event_id": 301,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 603155000,
+      "duration": "603.155ms"
+    },
+    {
+      "event_id": 732,
+      "event_type": "music",
+      "priority": "Medium",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 602168000,
+      "duration": "602.168ms"
+    },
+    {
+      "event_id": 636,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 10000000000,
+      "duration": "10s"
+    },
+    {
+      "event_id": 602,
+      "event_type": "dirty_table",
+      "priority": "Low",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 606666000,
+      "duration": "606.666ms"
+    },
+    {
+      "event_id": 797,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 10000000000,
+      "duration": "10s"
+    },
+    {
+      "event_id": 692,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1405984000,
+      "duration": "1.405984s"
+    },
+    {
+      "event_id": 879,
+      "event_type": "dirty_floor",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1007985000,
+      "duration": "1.007985s"
+    },
+    {
+      "event_id": 70,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1205895000,
+      "duration": "1.205895s"
+    },
+    {
+      "event_id": 506,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 740,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 927,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 602722000,
+      "duration": "602.722ms"
+    },
+    {
+      "event_id": 642,
+      "event_type": "feeling_ill",
+      "priority": "Medium",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 602447000,
+      "duration": "602.447ms"
+    },
+    {
+      "event_id": 802,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 786971000,
+      "duration": "786.971ms"
+    },
+    {
+      "event_id": 608,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 783761000,
+      "duration": "783.761ms"
+    },
+    {
+      "event_id": 465,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 6389274000,
+      "duration": "6.389274s"
+    },
+    {
+      "event_id": 234,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 5389661000,
+      "duration": "5.389661s"
+    },
+    {
+      "event_id": 866,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 3381209000,
+      "duration": "3.381209s"
+    },
+    {
+      "event_id": 894,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 8791599000,
+      "duration": "8.791599s"
+    },
+    {
+      "event_id": 504,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 2988495000,
+      "duration": "2.988495s"
+    },
+    {
+      "event_id": 991,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 2587804000,
+      "duration": "2.587804s"
+    },
+    {
+      "event_id": 347,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 4395410000,
+      "duration": "4.39541s"
+    },
+    {
+      "event_id": 697,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 10396507000,
+      "duration": "10.396507s"
+    },
+    {
+      "event_id": 745,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 3791435000,
+      "duration": "3.791435s"
+    },
+    {
+      "event_id": 207,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 2393759000,
+      "duration": "2.393759s"
+    },
+    {
+      "event_id": 209,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 930,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 3187282000,
+      "duration": "3.187282s"
+    },
+    {
+      "event_id": 983,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 8780200000,
+      "duration": "8.7802s"
+    },
+    {
+      "event_id": 6,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 8383778000,
+      "duration": "8.383778s"
+    },
+    {
+      "event_id": 883,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 7792673000,
+      "duration": "7.792673s"
+    },
+    {
+      "event_id": 505,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 1789868000,
+      "duration": "1.789868s"
+    },
+    {
+      "event_id": 210,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 795047000,
+      "duration": "795.047ms"
+    },
+    {
+      "event_id": 785,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 1793416000,
+      "duration": "1.793416s"
+    },
+    {
+      "event_id": 251,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 2195065000,
+      "duration": "2.195065s"
+    },
+    {
+      "event_id": 450,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 10000000000,
+      "duration": "10s"
+    },
+    {
+      "event_id": 403,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 9194052000,
+      "duration": "9.194052s"
+    },
+    {
+      "event_id": 869,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 2585561000,
+      "duration": "2.585561s"
+    },
+    {
+      "event_id": 297,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 6795404000,
+      "duration": "6.795404s"
+    },
+    {
+      "event_id": 269,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 1392877000,
+      "duration": "1.392877s"
+    },
+    {
+      "event_id": 765,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 4584504000,
+      "duration": "4.584504s"
+    },
+    {
+      "event_id": 531,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 3395197000,
+      "duration": "3.395197s"
+    },
+    {
+      "event_id": 346,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 6591145000,
+      "duration": "6.591145s"
+    },
+    {
+      "event_id": 873,
+      "event_type": "not_on_list",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 5595033000,
+      "duration": "5.595033s"
+    },
+    {
+      "event_id": 445,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 9395448000,
+      "duration": "9.395448s"
+    },
+    {
+      "event_id": 172,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 4387912000,
+      "duration": "4.387912s"
+    },
+    {
+      "event_id": 487,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 9776710000,
+      "duration": "9.77671s"
+    },
+    {
+      "event_id": 587,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 783942000,
+      "duration": "783.942ms"
+    },
+    {
+      "event_id": 260,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 4589439000,
+      "duration": "4.589439s"
+    },
+    {
+      "event_id": 226,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 7590014000,
+      "duration": "7.590014s"
+    },
+    {
+      "event_id": 361,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 4795174000,
+      "duration": "4.795174s"
+    },
+    {
+      "event_id": 365,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 3595005000,
+      "duration": "3.595005s"
+    },
+    {
+      "event_id": 191,
+      "event_type": "not_on_list",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 7195325000,
+      "duration": "7.195325s"
+    },
+    {
+      "event_id": 973,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 7190565000,
+      "duration": "7.190565s"
+    },
+    {
+      "event_id": 437,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 9795362000,
+      "duration": "9.795362s"
+    },
+    {
+      "event_id": 699,
+      "event_type": "not_on_list",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 7995584000,
+      "duration": "7.995584s"
+    },
+    {
+      "event_id": 88,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 997589000,
+      "duration": "997.589ms"
+    },
+    {
+      "event_id": 179,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 601212000,
+      "duration": "601.212ms"
+    },
+    {
+      "event_id": 579,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602065000,
+      "duration": "602.065ms"
+    },
+    {
+      "event_id": 840,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601718000,
+      "duration": "601.718ms"
+    },
+    {
+      "event_id": 97,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602088000,
+      "duration": "602.088ms"
+    },
+    {
+      "event_id": 897,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603134000,
+      "duration": "603.134ms"
+    },
+    {
+      "event_id": 497,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603145000,
+      "duration": "603.145ms"
+    },
+    {
+      "event_id": 161,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 806512000,
+      "duration": "806.512ms"
+    },
+    {
+      "event_id": 944,
+      "event_type": "feeling_ill",
+      "priority": "High",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 994883000,
+      "duration": "994.883ms"
+    },
+    {
+      "event_id": 120,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 607021000,
+      "duration": "607.021ms"
+    },
+    {
+      "event_id": 900,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 604089000,
+      "duration": "604.089ms"
+    },
+    {
+      "event_id": 45,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 988229000,
+      "duration": "988.229ms"
+    },
+    {
+      "event_id": 770,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602807000,
+      "duration": "602.807ms"
+    },
+    {
+      "event_id": 940,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602685000,
+      "duration": "602.685ms"
+    },
+    {
+      "event_id": 508,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603178000,
+      "duration": "603.178ms"
+    },
+    {
+      "event_id": 841,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602816000,
+      "duration": "602.816ms"
+    },
+    {
+      "event_id": 320,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602631000,
+      "duration": "602.631ms"
+    },
+    {
+      "event_id": 522,
+      "event_type": "not_on_list",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603067000,
+      "duration": "603.067ms"
+    },
+    {
+      "event_id": 727,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602782000,
+      "duration": "602.782ms"
+    },
+    {
+      "event_id": 741,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602729000,
+      "duration": "602.729ms"
+    },
+    {
+      "event_id": 520,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602630000,
+      "duration": "602.63ms"
+    },
+    {
+      "event_id": 507,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603592000,
+      "duration": "603.592ms"
+    },
+    {
+      "event_id": 833,
+      "event_type": "dirty_table",
+      "priority": "Low",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 4398468000,
+      "duration": "4.398468s"
+    },
+    {
+      "event_id": 350,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 1390941000,
+      "duration": "1.390941s"
+    },
+    {
+      "event_id": 821,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3194836000,
+      "duration": "3.194836s"
+    },
+    {
+      "event_id": 183,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 2988461000,
+      "duration": "2.988461s"
+    },
+    {
+      "event_id": 330,
+      "event_type": "music",
+      "priority": "Medium",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 2981118000,
+      "duration": "2.981118s"
+    },
+    {
+      "event_id": 104,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 785987000,
+      "duration": "785.987ms"
+    },
+    {
+      "event_id": 327,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2590398000,
+      "duration": "2.590398s"
+    },
+    {
+      "event_id": 690,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3199679000,
+      "duration": "3.199679s"
+    },
+    {
+      "event_id": 994,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4598068000,
+      "duration": "4.598068s"
+    },
+    {
+      "event_id": 280,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3400346000,
+      "duration": "3.400346s"
+    },
+    {
+      "event_id": 953,
+      "event_type": "dirty_table",
+      "priority": "Low",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 2400108000,
+      "duration": "2.400108s"
+    },
+    {
+      "event_id": 313,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 784700000,
+      "duration": "784.7ms"
+    },
+    {
+      "event_id": 545,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3799146000,
+      "duration": "3.799146s"
+    },
+    {
+      "event_id": 515,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 2987438000,
+      "duration": "2.987438s"
+    },
+    {
+      "event_id": 359,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1391865000,
+      "duration": "1.391865s"
+    },
+    {
+      "event_id": 49,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3402508000,
+      "duration": "3.402508s"
+    },
+    {
+      "event_id": 595,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1202633000,
+      "duration": "1.202633s"
+    },
+    {
+      "event_id": 306,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2585795000,
+      "duration": "2.585795s"
+    },
+    {
+      "event_id": 314,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3199048000,
+      "duration": "3.199048s"
+    },
+    {
+      "event_id": 173,
+      "event_type": "dirty_table",
+      "priority": "Medium",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 602986000,
+      "duration": "602.986ms"
+    },
+    {
+      "event_id": 37,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 3604686000,
+      "duration": "3.604686s"
+    },
+    {
+      "event_id": 916,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 1004494000,
+      "duration": "1.004494s"
+    },
+    {
+      "event_id": 464,
+      "event_type": "dirty_table",
+      "priority": "Medium",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 601823000,
+      "duration": "601.823ms"
+    },
+    {
+      "event_id": 909,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1405011000,
+      "duration": "1.405011s"
+    },
+    {
+      "event_id": 881,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 801151000,
+      "duration": "801.151ms"
+    },
+    {
+      "event_id": 155,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1001765000,
+      "duration": "1.001765s"
+    },
+    {
+      "event_id": 721,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1401980000,
+      "duration": "1.40198s"
+    },
+    {
+      "event_id": 427,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 797390000,
+      "duration": "797.39ms"
+    },
+    {
+      "event_id": 974,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 601612000,
+      "duration": "601.612ms"
+    },
+    {
+      "event_id": 832,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603380000,
+      "duration": "603.38ms"
+    },
+    {
+      "event_id": 641,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602262000,
+      "duration": "602.262ms"
+    },
+    {
+      "event_id": 23,
+      "event_type": "music",
+      "priority": "Medium",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 601165000,
+      "duration": "601.165ms"
+    },
+    {
+      "event_id": 800,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 610889000,
+      "duration": "610.889ms"
+    },
+    {
+      "event_id": 580,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 610525000,
+      "duration": "610.525ms"
+    },
+    {
+      "event_id": 693,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600952000,
+      "duration": "600.952ms"
+    },
+    {
+      "event_id": 236,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601047000,
+      "duration": "601.047ms"
+    },
+    {
+      "event_id": 957,
+      "event_type": "brawl",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 604992000,
+      "duration": "604.992ms"
+    },
+    {
+      "event_id": 275,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 601578000,
+      "duration": "601.578ms"
+    },
+    {
+      "event_id": 444,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 601125000,
+      "duration": "601.125ms"
+    },
+    {
+      "event_id": 776,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601529000,
+      "duration": "601.529ms"
+    },
+    {
+      "event_id": 627,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601331000,
+      "duration": "601.331ms"
+    },
+    {
+      "event_id": 830,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601082000,
+      "duration": "601.082ms"
+    },
+    {
+      "event_id": 331,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601446000,
+      "duration": "601.446ms"
+    },
+    {
+      "event_id": 783,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601190000,
+      "duration": "601.19ms"
+    },
+    {
+      "event_id": 574,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601376000,
+      "duration": "601.376ms"
+    },
+    {
+      "event_id": 720,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601155000,
+      "duration": "601.155ms"
+    },
+    {
+      "event_id": 428,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601366000,
+      "duration": "601.366ms"
+    },
+    {
+      "event_id": 929,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601932000,
+      "duration": "601.932ms"
+    },
+    {
+      "event_id": 575,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601999000,
+      "duration": "601.999ms"
+    },
+    {
+      "event_id": 164,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601740000,
+      "duration": "601.74ms"
+    },
+    {
+      "event_id": 941,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601774000,
+      "duration": "601.774ms"
+    },
+    {
+      "event_id": 679,
+      "event_type": "not_on_list",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603227000,
+      "duration": "603.227ms"
+    },
+    {
+      "event_id": 84,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603096000,
+      "duration": "603.096ms"
+    },
+    {
+      "event_id": 18,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602957000,
+      "duration": "602.957ms"
+    },
+    {
+      "event_id": 241,
+      "event_type": "dirty_floor",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1206528000,
+      "duration": "1.206528s"
+    },
+    {
+      "event_id": 967,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1205905000,
+      "duration": "1.205905s"
+    },
+    {
+      "event_id": 442,
+      "event_type": "feeling_ill",
+      "priority": "Medium",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 801040000,
+      "duration": "801.04ms"
+    },
+    {
+      "event_id": 495,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602332000,
+      "duration": "602.332ms"
+    },
+    {
+      "event_id": 532,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602749000,
+      "duration": "602.749ms"
+    },
+    {
+      "event_id": 904,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602438000,
+      "duration": "602.438ms"
+    },
+    {
+      "event_id": 805,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602521000,
+      "duration": "602.521ms"
+    },
+    {
+      "event_id": 91,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603577000,
+      "duration": "603.577ms"
+    },
+    {
+      "event_id": 376,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 603354000,
+      "duration": "603.354ms"
+    },
+    {
+      "event_id": 338,
+      "event_type": "feeling_ill",
+      "priority": "High",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 603107000,
+      "duration": "603.107ms"
+    },
+    {
+      "event_id": 367,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603247000,
+      "duration": "603.247ms"
+    },
+    {
+      "event_id": 213,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603937000,
+      "duration": "603.937ms"
+    },
+    {
+      "event_id": 312,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603019000,
+      "duration": "603.019ms"
+    },
+    {
+      "event_id": 910,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602821000,
+      "duration": "602.821ms"
+    },
+    {
+      "event_id": 288,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603161000,
+      "duration": "603.161ms"
+    },
+    {
+      "event_id": 140,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 603741000,
+      "duration": "603.741ms"
+    },
+    {
+      "event_id": 606,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 604247000,
+      "duration": "604.247ms"
+    },
+    {
+      "event_id": 729,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1006385000,
+      "duration": "1.006385s"
+    },
+    {
+      "event_id": 287,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1003060000,
+      "duration": "1.00306s"
+    },
+    {
+      "event_id": 52,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1207454000,
+      "duration": "1.207454s"
+    },
+    {
+      "event_id": 503,
+      "event_type": "dirty_floor",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1402636000,
+      "duration": "1.402636s"
+    },
+    {
+      "event_id": 247,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1000747000,
+      "duration": "1.000747s"
+    },
+    {
+      "event_id": 921,
+      "event_type": "feeling_ill",
+      "priority": "High",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 808378000,
+      "duration": "808.378ms"
+    },
+    {
+      "event_id": 169,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 604339000,
+      "duration": "604.339ms"
+    },
+    {
+      "event_id": 563,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 603217000,
+      "duration": "603.217ms"
+    },
+    {
+      "event_id": 761,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602512000,
+      "duration": "602.512ms"
+    },
+    {
+      "event_id": 816,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603396000,
+      "duration": "603.396ms"
+    },
+    {
+      "event_id": 144,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603383000,
+      "duration": "603.383ms"
+    },
+    {
+      "event_id": 53,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 605092000,
+      "duration": "605.092ms"
+    },
+    {
+      "event_id": 423,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603696000,
+      "duration": "603.696ms"
+    },
+    {
+      "event_id": 154,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602439000,
+      "duration": "602.439ms"
+    },
+    {
+      "event_id": 383,
+      "event_type": "feeling_ill",
+      "priority": "High",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 602930000,
+      "duration": "602.93ms"
+    },
+    {
+      "event_id": 136,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602723000,
+      "duration": "602.723ms"
+    },
+    {
+      "event_id": 378,
+      "event_type": "dirty_table",
+      "priority": "Medium",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 3796672000,
+      "duration": "3.796672s"
+    },
+    {
+      "event_id": 875,
+      "event_type": "dirty_table",
+      "priority": "Medium",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 2996536000,
+      "duration": "2.996536s"
+    },
+    {
+      "event_id": 284,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 4593986000,
+      "duration": "4.593986s"
+    },
+    {
+      "event_id": 577,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1989208000,
+      "duration": "1.989208s"
+    },
+    {
+      "event_id": 62,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 982402000,
+      "duration": "982.402ms"
+    },
+    {
+      "event_id": 73,
+      "event_type": "brawl",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 981626000,
+      "duration": "981.626ms"
+    },
+    {
+      "event_id": 678,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3600259000,
+      "duration": "3.600259s"
+    },
+    {
+      "event_id": 801,
+      "event_type": "music",
+      "priority": "Medium",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 3801671000,
+      "duration": "3.801671s"
+    },
+    {
+      "event_id": 105,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 601650000,
+      "duration": "601.65ms"
+    },
+    {
+      "event_id": 388,
+      "event_type": "brawl",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4599223000,
+      "duration": "4.599223s"
+    },
+    {
+      "event_id": 626,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 998793000,
+      "duration": "998.793ms"
+    },
+    {
+      "event_id": 456,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4591316000,
+      "duration": "4.591316s"
+    },
+    {
+      "event_id": 698,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3202256000,
+      "duration": "3.202256s"
+    },
+    {
+      "event_id": 353,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2399422000,
+      "duration": "2.399422s"
+    },
+    {
+      "event_id": 2,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1402233000,
+      "duration": "1.402233s"
+    },
+    {
+      "event_id": 849,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3002788000,
+      "duration": "3.002788s"
+    },
+    {
+      "event_id": 21,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1798070000,
+      "duration": "1.79807s"
+    },
+    {
+      "event_id": 27,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 3791597000,
+      "duration": "3.791597s"
+    },
+    {
+      "event_id": 635,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602934000,
+      "duration": "602.934ms"
+    },
+    {
+      "event_id": 778,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 601946000,
+      "duration": "601.946ms"
+    },
+    {
+      "event_id": 814,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 602165000,
+      "duration": "602.165ms"
+    },
+    {
+      "event_id": 588,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 600977000,
+      "duration": "600.977ms"
+    },
+    {
+      "event_id": 85,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 600630000,
+      "duration": "600.63ms"
+    },
+    {
+      "event_id": 851,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 600683000,
+      "duration": "600.683ms"
+    },
+    {
+      "event_id": 398,
+      "event_type": "dirty_table",
+      "priority": "Low",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 601339000,
+      "duration": "601.339ms"
+    },
+    {
+      "event_id": 433,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602480000,
+      "duration": "602.48ms"
+    },
+    {
+      "event_id": 992,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602515000,
+      "duration": "602.515ms"
+    },
+    {
+      "event_id": 651,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601288000,
+      "duration": "601.288ms"
+    },
+    {
+      "event_id": 555,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 807204000,
+      "duration": "807.204ms"
+    },
+    {
+      "event_id": 963,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1404139000,
+      "duration": "1.404139s"
+    },
+    {
+      "event_id": 264,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 806881000,
+      "duration": "806.881ms"
+    },
+    {
+      "event_id": 911,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1008282000,
+      "duration": "1.008282s"
+    },
+    {
+      "event_id": 392,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 607744000,
+      "duration": "607.744ms"
+    },
+    {
+      "event_id": 57,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602480000,
+      "duration": "602.48ms"
+    },
+    {
+      "event_id": 793,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601594000,
+      "duration": "601.594ms"
+    },
+    {
+      "event_id": 293,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603025000,
+      "duration": "603.025ms"
+    },
+    {
+      "event_id": 122,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 600882000,
+      "duration": "600.882ms"
+    },
+    {
+      "event_id": 768,
+      "event_type": "feeling_ill",
+      "priority": "Medium",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 601252000,
+      "duration": "601.252ms"
+    },
+    {
+      "event_id": 103,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600792000,
+      "duration": "600.792ms"
+    },
+    {
+      "event_id": 86,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600905000,
+      "duration": "600.905ms"
+    },
+    {
+      "event_id": 878,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600909000,
+      "duration": "600.909ms"
+    },
+    {
+      "event_id": 960,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601404000,
+      "duration": "601.404ms"
+    },
+    {
+      "event_id": 163,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602159000,
+      "duration": "602.159ms"
+    },
+    {
+      "event_id": 536,
+      "event_type": "feeling_ill",
+      "priority": "High",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 807646000,
+      "duration": "807.646ms"
+    },
+    {
+      "event_id": 199,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 606673000,
+      "duration": "606.673ms"
+    },
+    {
+      "event_id": 294,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602268000,
+      "duration": "602.268ms"
+    },
+    {
+      "event_id": 369,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602010000,
+      "duration": "602.01ms"
+    },
+    {
+      "event_id": 484,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 600551000,
+      "duration": "600.551ms"
+    },
+    {
+      "event_id": 912,
+      "event_type": "dirty_floor",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602224000,
+      "duration": "602.224ms"
+    },
+    {
+      "event_id": 584,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602617000,
+      "duration": "602.617ms"
+    },
+    {
+      "event_id": 762,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602288000,
+      "duration": "602.288ms"
+    },
+    {
+      "event_id": 245,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602721000,
+      "duration": "602.721ms"
+    },
+    {
+      "event_id": 962,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603200000,
+      "duration": "603.2ms"
+    },
+    {
+      "event_id": 32,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603477000,
+      "duration": "603.477ms"
+    },
+    {
+      "event_id": 571,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 603548000,
+      "duration": "603.548ms"
+    },
+    {
+      "event_id": 903,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603038000,
+      "duration": "603.038ms"
+    },
+    {
+      "event_id": 631,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 2796935000,
+      "duration": "2.796935s"
+    },
+    {
+      "event_id": 485,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 1997591000,
+      "duration": "1.997591s"
+    },
+    {
+      "event_id": 149,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 2401186000,
+      "duration": "2.401186s"
+    },
+    {
+      "event_id": 882,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3002173000,
+      "duration": "3.002173s"
+    },
+    {
+      "event_id": 835,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4002751000,
+      "duration": "4.002751s"
+    },
+    {
+      "event_id": 65,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 800112000,
+      "duration": "800.112ms"
+    },
+    {
+      "event_id": 604,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 4196863000,
+      "duration": "4.196863s"
+    },
+    {
+      "event_id": 265,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1803639000,
+      "duration": "1.803639s"
+    },
+    {
+      "event_id": 633,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2202837000,
+      "duration": "2.202837s"
+    },
+    {
+      "event_id": 69,
+      "event_type": "music",
+      "priority": "Medium",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 1195695000,
+      "duration": "1.195695s"
+    },
+    {
+      "event_id": 625,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 2201267000,
+      "duration": "2.201267s"
+    },
+    {
+      "event_id": 303,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2804349000,
+      "duration": "2.804349s"
+    },
+    {
+      "event_id": 430,
+      "event_type": "dirty_table",
+      "priority": "Medium",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 604168000,
+      "duration": "604.168ms"
+    },
+    {
+      "event_id": 142,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1193345000,
+      "duration": "1.193345s"
+    },
+    {
+      "event_id": 204,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 2001039000,
+      "duration": "2.001039s"
+    },
+    {
+      "event_id": 666,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 796987000,
+      "duration": "796.987ms"
+    },
+    {
+      "event_id": 474,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 603657000,
+      "duration": "603.657ms"
+    },
+    {
+      "event_id": 519,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 602507000,
+      "duration": "602.507ms"
+    },
+    {
+      "event_id": 56,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602089000,
+      "duration": "602.089ms"
+    },
+    {
+      "event_id": 268,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 602247000,
+      "duration": "602.247ms"
+    },
+    {
+      "event_id": 233,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 602253000,
+      "duration": "602.253ms"
+    },
+    {
+      "event_id": 687,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 603102000,
+      "duration": "603.102ms"
+    },
+    {
+      "event_id": 460,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 604615000,
+      "duration": "604.615ms"
+    },
+    {
+      "event_id": 127,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 604810000,
+      "duration": "604.81ms"
+    },
+    {
+      "event_id": 887,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602944000,
+      "duration": "602.944ms"
+    },
+    {
+      "event_id": 585,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 801866000,
+      "duration": "801.866ms"
+    },
+    {
+      "event_id": 527,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1206333000,
+      "duration": "1.206333s"
+    },
+    {
+      "event_id": 194,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603800000,
+      "duration": "603.8ms"
+    },
+    {
+      "event_id": 667,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 603655000,
+      "duration": "603.655ms"
+    },
+    {
+      "event_id": 201,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 475,
+      "event_type": "feeling_ill",
+      "priority": "High",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 1204930000,
+      "duration": "1.20493s"
+    },
+    {
+      "event_id": 238,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1007791000,
+      "duration": "1.007791s"
+    },
+    {
+      "event_id": 441,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 995475000,
+      "duration": "995.475ms"
+    },
+    {
+      "event_id": 116,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 1198140000,
+      "duration": "1.19814s"
+    },
+    {
+      "event_id": 332,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603402000,
+      "duration": "603.402ms"
+    },
+    {
+      "event_id": 125,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 362,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 266,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 435,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 158,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 494,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2600757000,
+      "duration": "2.600757s"
+    },
+    {
+      "event_id": 133,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4397235000,
+      "duration": "4.397235s"
+    },
+    {
+      "event_id": 918,
+      "event_type": "dirty_table",
+      "priority": "Low",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 3799722000,
+      "duration": "3.799722s"
+    },
+    {
+      "event_id": 454,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2799919000,
+      "duration": "2.799919s"
+    },
+    {
+      "event_id": 890,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3995083000,
+      "duration": "3.995083s"
+    },
+    {
+      "event_id": 368,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3393498000,
+      "duration": "3.393498s"
+    },
+    {
+      "event_id": 870,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3600465000,
+      "duration": "3.600465s"
+    },
+    {
+      "event_id": 856,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 993494000,
+      "duration": "993.494ms"
+    },
+    {
+      "event_id": 886,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 3998897000,
+      "duration": "3.998897s"
+    },
+    {
+      "event_id": 366,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2594629000,
+      "duration": "2.594629s"
+    },
+    {
+      "event_id": 129,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 798404000,
+      "duration": "798.404ms"
+    },
+    {
+      "event_id": 218,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4603058000,
+      "duration": "4.603058s"
+    },
+    {
+      "event_id": 549,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1203093000,
+      "duration": "1.203093s"
+    },
+    {
+      "event_id": 3,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3203587000,
+      "duration": "3.203587s"
+    },
+    {
+      "event_id": 554,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1801962000,
+      "duration": "1.801962s"
+    },
+    {
+      "event_id": 216,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3399519000,
+      "duration": "3.399519s"
+    },
+    {
+      "event_id": 214,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2184571000,
+      "duration": "2.184571s"
+    },
+    {
+      "event_id": 54,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 603488000,
+      "duration": "603.488ms"
+    },
+    {
+      "event_id": 947,
+      "event_type": "brawl",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 602045000,
+      "duration": "602.045ms"
+    },
+    {
+      "event_id": 906,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 602383000,
+      "duration": "602.383ms"
+    },
+    {
+      "event_id": 51,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 205,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 602157000,
+      "duration": "602.157ms"
+    },
+    {
+      "event_id": 476,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 682,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 39,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 166,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 602142000,
+      "duration": "602.142ms"
+    },
+    {
+      "event_id": 243,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 602622000,
+      "duration": "602.622ms"
+    },
+    {
+      "event_id": 202,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 99,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1006940000,
+      "duration": "1.00694s"
+    },
+    {
+      "event_id": 853,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603274000,
+      "duration": "603.274ms"
+    },
+    {
+      "event_id": 14,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 996,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 664,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 981,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 804295000,
+      "duration": "804.295ms"
+    },
+    {
+      "event_id": 640,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1001466000,
+      "duration": "1.001466s"
+    },
+    {
+      "event_id": 146,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1202119000,
+      "duration": "1.202119s"
+    },
+    {
+      "event_id": 64,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1207665000,
+      "duration": "1.207665s"
+    },
+    {
+      "event_id": 663,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 606730000,
+      "duration": "606.73ms"
+    },
+    {
+      "event_id": 147,
+      "event_type": "feeling_ill",
+      "priority": "High",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 1197837000,
+      "duration": "1.197837s"
+    },
+    {
+      "event_id": 737,
+      "event_type": "feeling_ill",
+      "priority": "Medium",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 1407413000,
+      "duration": "1.407413s"
+    },
+    {
+      "event_id": 845,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 141,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 604435000,
+      "duration": "604.435ms"
+    },
+    {
+      "event_id": 212,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 604718000,
+      "duration": "604.718ms"
+    },
+    {
+      "event_id": 728,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 604615000,
+      "duration": "604.615ms"
+    },
+    {
+      "event_id": 498,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Expired",
+      "duration_ns": 10000000000,
+      "duration": "10s"
+    },
+    {
+      "event_id": 24,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 604588000,
+      "duration": "604.588ms"
+    },
+    {
+      "event_id": 380,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 10000000000,
+      "duration": "10s"
+    },
+    {
+      "event_id": 999,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 341,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 605065000,
+      "duration": "605.065ms"
+    },
+    {
+      "event_id": 521,
+      "event_type": "feeling_ill",
+      "priority": "High",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 604508000,
+      "duration": "604.508ms"
+    },
+    {
+      "event_id": 993,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 267,
+      "event_type": "not_on_list",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 10000000000,
+      "duration": "10s"
+    },
+    {
+      "event_id": 374,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Expired",
+      "duration_ns": 5000000000,
+      "duration": "5s"
+    },
+    {
+      "event_id": 44,
+      "event_type": "dirty_table",
+      "priority": "Low",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 1772753000,
+      "duration": "1.772753s"
+    },
+    {
+      "event_id": 261,
+      "event_type": "dirty_table",
+      "priority": "Medium",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 1580800000,
+      "duration": "1.5808s"
+    },
+    {
+      "event_id": 877,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 2982986000,
+      "duration": "2.982986s"
+    },
+    {
+      "event_id": 400,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 3393140000,
+      "duration": "3.39314s"
+    },
+    {
+      "event_id": 468,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 1197932000,
+      "duration": "1.197932s"
+    },
+    {
+      "event_id": 282,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 1399119000,
+      "duration": "1.399119s"
+    },
+    {
+      "event_id": 854,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2200467000,
+      "duration": "2.200467s"
+    },
+    {
+      "event_id": 568,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2793778000,
+      "duration": "2.793778s"
+    },
+    {
+      "event_id": 512,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4600710000,
+      "duration": "4.60071s"
+    },
+    {
+      "event_id": 40,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1996255000,
+      "duration": "1.996255s"
+    },
+    {
+      "event_id": 180,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3602033000,
+      "duration": "3.602033s"
+    },
+    {
+      "event_id": 254,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2989750000,
+      "duration": "2.98975s"
+    },
+    {
+      "event_id": 925,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2396788000,
+      "duration": "2.396788s"
+    },
+    {
+      "event_id": 634,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4603455000,
+      "duration": "4.603455s"
+    },
+    {
+      "event_id": 175,
+      "event_type": "brawl",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3185352000,
+      "duration": "3.185352s"
+    },
+    {
+      "event_id": 751,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 4403929000,
+      "duration": "4.403929s"
+    },
+    {
+      "event_id": 725,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 4401505000,
+      "duration": "4.401505s"
+    },
+    {
+      "event_id": 272,
+      "event_type": "music",
+      "priority": "Medium",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 3403524000,
+      "duration": "3.403524s"
+    },
+    {
+      "event_id": 500,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 1795679000,
+      "duration": "1.795679s"
+    },
+    {
+      "event_id": 837,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 1004564000,
+      "duration": "1.004564s"
+    },
+    {
+      "event_id": 95,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 993431000,
+      "duration": "993.431ms"
+    },
+    {
+      "event_id": 411,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1607264000,
+      "duration": "1.607264s"
+    },
+    {
+      "event_id": 390,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1192430000,
+      "duration": "1.19243s"
+    },
+    {
+      "event_id": 480,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1402221000,
+      "duration": "1.402221s"
+    },
+    {
+      "event_id": 792,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 602429000,
+      "duration": "602.429ms"
+    },
+    {
+      "event_id": 530,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 602642000,
+      "duration": "602.642ms"
+    },
+    {
+      "event_id": 525,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602143000,
+      "duration": "602.143ms"
+    },
+    {
+      "event_id": 719,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 604894000,
+      "duration": "604.894ms"
+    },
+    {
+      "event_id": 203,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602471000,
+      "duration": "602.471ms"
+    },
+    {
+      "event_id": 295,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 980946000,
+      "duration": "980.946ms"
+    },
+    {
+      "event_id": 764,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 2981717000,
+      "duration": "2.981717s"
+    },
+    {
+      "event_id": 174,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 11992487000,
+      "duration": "11.992487s"
+    },
+    {
+      "event_id": 128,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 7189099000,
+      "duration": "7.189099s"
+    },
+    {
+      "event_id": 714,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 6992320000,
+      "duration": "6.99232s"
+    },
+    {
+      "event_id": 74,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 1192898000,
+      "duration": "1.192898s"
+    },
+    {
+      "event_id": 422,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 11192147000,
+      "duration": "11.192147s"
+    },
+    {
+      "event_id": 42,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 2580683000,
+      "duration": "2.580683s"
+    },
+    {
+      "event_id": 259,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 5985017000,
+      "duration": "5.985017s"
+    },
+    {
+      "event_id": 753,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 5384336000,
+      "duration": "5.384336s"
+    },
+    {
+      "event_id": 576,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 5991861000,
+      "duration": "5.991861s"
+    },
+    {
+      "event_id": 617,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 4794788000,
+      "duration": "4.794788s"
+    },
+    {
+      "event_id": 643,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Expired",
+      "duration_ns": 10000000000,
+      "duration": "10s"
+    },
+    {
+      "event_id": 593,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 8188321000,
+      "duration": "8.188321s"
+    },
+    {
+      "event_id": 524,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 3184692000,
+      "duration": "3.184692s"
+    },
+    {
+      "event_id": 143,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 3992915000,
+      "duration": "3.992915s"
+    },
+    {
+      "event_id": 375,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 795743000,
+      "duration": "795.743ms"
+    },
+    {
+      "event_id": 747,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 7594138000,
+      "duration": "7.594138s"
+    },
+    {
+      "event_id": 490,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 3180153000,
+      "duration": "3.180153s"
+    },
+    {
+      "event_id": 307,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 7589442000,
+      "duration": "7.589442s"
+    },
+    {
+      "event_id": 546,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 1986491000,
+      "duration": "1.986491s"
+    },
+    {
+      "event_id": 72,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 1588366000,
+      "duration": "1.588366s"
+    },
+    {
+      "event_id": 535,
+      "event_type": "not_on_list",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 974858000,
+      "duration": "974.858ms"
+    },
+    {
+      "event_id": 995,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 5195437000,
+      "duration": "5.195437s"
+    },
+    {
+      "event_id": 470,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 12192479000,
+      "duration": "12.192479s"
+    },
+    {
+      "event_id": 311,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 977075000,
+      "duration": "977.075ms"
+    },
+    {
+      "event_id": 557,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 6591776000,
+      "duration": "6.591776s"
+    },
+    {
+      "event_id": 257,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 11587063000,
+      "duration": "11.587063s"
+    },
+    {
+      "event_id": 1000,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 972675000,
+      "duration": "972.675ms"
+    },
+    {
+      "event_id": 989,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 1592557000,
+      "duration": "1.592557s"
+    },
+    {
+      "event_id": 855,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 2978447000,
+      "duration": "2.978447s"
+    },
+    {
+      "event_id": 558,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 5796137000,
+      "duration": "5.796137s"
+    },
+    {
+      "event_id": 491,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 1395821000,
+      "duration": "1.395821s"
+    },
+    {
+      "event_id": 542,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 6391857000,
+      "duration": "6.391857s"
+    },
+    {
+      "event_id": 581,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 1393372000,
+      "duration": "1.393372s"
+    },
+    {
+      "event_id": 968,
+      "event_type": "not_on_list",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 8195795000,
+      "duration": "8.195795s"
+    },
+    {
+      "event_id": 223,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 2184404000,
+      "duration": "2.184404s"
+    },
+    {
+      "event_id": 100,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 9996567000,
+      "duration": "9.996567s"
+    },
+    {
+      "event_id": 700,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 4791808000,
+      "duration": "4.791808s"
+    },
+    {
+      "event_id": 153,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 1780684000,
+      "duration": "1.780684s"
+    },
+    {
+      "event_id": 452,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 7991626000,
+      "duration": "7.991626s"
+    },
+    {
+      "event_id": 231,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 1792964000,
+      "duration": "1.792964s"
+    },
+    {
+      "event_id": 863,
+      "event_type": "not_on_list",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 4996312000,
+      "duration": "4.996312s"
+    },
+    {
+      "event_id": 619,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 2589614000,
+      "duration": "2.589614s"
+    },
+    {
+      "event_id": 399,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 994272000,
+      "duration": "994.272ms"
+    },
+    {
+      "event_id": 514,
+      "event_type": "not_on_list",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 11193219000,
+      "duration": "11.193219s"
+    },
+    {
+      "event_id": 589,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 2780078000,
+      "duration": "2.780078s"
+    },
+    {
+      "event_id": 252,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 1787059000,
+      "duration": "1.787059s"
+    },
+    {
+      "event_id": 176,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 2789644000,
+      "duration": "2.789644s"
+    },
+    {
+      "event_id": 4,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Expired",
+      "duration_ns": 10000000000,
+      "duration": "10s"
+    },
+    {
+      "event_id": 228,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 8181568000,
+      "duration": "8.181568s"
+    },
+    {
+      "event_id": 463,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 600856000,
+      "duration": "600.856ms"
+    },
+    {
+      "event_id": 107,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 600506000,
+      "duration": "600.506ms"
+    },
+    {
+      "event_id": 786,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602081000,
+      "duration": "602.081ms"
+    },
+    {
+      "event_id": 109,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601588000,
+      "duration": "601.588ms"
+    },
+    {
+      "event_id": 885,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601514000,
+      "duration": "601.514ms"
+    },
+    {
+      "event_id": 412,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601845000,
+      "duration": "601.845ms"
+    },
+    {
+      "event_id": 769,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601771000,
+      "duration": "601.771ms"
+    },
+    {
+      "event_id": 744,
+      "event_type": "not_on_list",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602171000,
+      "duration": "602.171ms"
+    },
+    {
+      "event_id": 496,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601554000,
+      "duration": "601.554ms"
+    },
+    {
+      "event_id": 15,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602825000,
+      "duration": "602.825ms"
+    },
+    {
+      "event_id": 594,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 608465000,
+      "duration": "608.465ms"
+    },
+    {
+      "event_id": 394,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1400575000,
+      "duration": "1.400575s"
+    },
+    {
+      "event_id": 111,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1394606000,
+      "duration": "1.394606s"
+    },
+    {
+      "event_id": 381,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601609000,
+      "duration": "601.609ms"
+    },
+    {
+      "event_id": 162,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601566000,
+      "duration": "601.566ms"
+    },
+    {
+      "event_id": 674,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602106000,
+      "duration": "602.106ms"
+    },
+    {
+      "event_id": 513,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601801000,
+      "duration": "601.801ms"
+    },
+    {
+      "event_id": 815,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601636000,
+      "duration": "601.636ms"
+    },
+    {
+      "event_id": 377,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601560000,
+      "duration": "601.56ms"
+    },
+    {
+      "event_id": 701,
+      "event_type": "feeling_ill",
+      "priority": "Medium",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 601506000,
+      "duration": "601.506ms"
+    },
+    {
+      "event_id": 734,
+      "event_type": "feeling_ill",
+      "priority": "High",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 602142000,
+      "duration": "602.142ms"
+    },
+    {
+      "event_id": 121,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603107000,
+      "duration": "603.107ms"
+    },
+    {
+      "event_id": 852,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602803000,
+      "duration": "602.803ms"
+    },
+    {
+      "event_id": 553,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603026000,
+      "duration": "603.026ms"
+    },
+    {
+      "event_id": 775,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603505000,
+      "duration": "603.505ms"
+    },
+    {
+      "event_id": 707,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603490000,
+      "duration": "603.49ms"
+    },
+    {
+      "event_id": 978,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1206481000,
+      "duration": "1.206481s"
+    },
+    {
+      "event_id": 113,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1003325000,
+      "duration": "1.003325s"
+    },
+    {
+      "event_id": 340,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603574000,
+      "duration": "603.574ms"
+    },
+    {
+      "event_id": 665,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 805532000,
+      "duration": "805.532ms"
+    },
+    {
+      "event_id": 302,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1207208000,
+      "duration": "1.207208s"
+    },
+    {
+      "event_id": 923,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602660000,
+      "duration": "602.66ms"
+    },
+    {
+      "event_id": 971,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602569000,
+      "duration": "602.569ms"
+    },
+    {
+      "event_id": 975,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602454000,
+      "duration": "602.454ms"
+    },
+    {
+      "event_id": 30,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602789000,
+      "duration": "602.789ms"
+    },
+    {
+      "event_id": 429,
+      "event_type": "feeling_ill",
+      "priority": "Medium",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 602740000,
+      "duration": "602.74ms"
+    },
+    {
+      "event_id": 730,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603921000,
+      "duration": "603.921ms"
+    },
+    {
+      "event_id": 573,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 604727000,
+      "duration": "604.727ms"
+    },
+    {
+      "event_id": 343,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603210000,
+      "duration": "603.21ms"
+    },
+    {
+      "event_id": 965,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602791000,
+      "duration": "602.791ms"
+    },
+    {
+      "event_id": 784,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602606000,
+      "duration": "602.606ms"
+    },
+    {
+      "event_id": 185,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 998860000,
+      "duration": "998.86ms"
+    },
+    {
+      "event_id": 914,
+      "event_type": "dirty_table",
+      "priority": "Low",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 2596640000,
+      "duration": "2.59664s"
+    },
+    {
+      "event_id": 660,
+      "event_type": "dirty_table",
+      "priority": "Medium",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 2797035000,
+      "duration": "2.797035s"
+    },
+    {
+      "event_id": 219,
+      "event_type": "dirty_table",
+      "priority": "Low",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 997422000,
+      "duration": "997.422ms"
+    },
+    {
+      "event_id": 961,
+      "event_type": "dirty_table",
+      "priority": "Low",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 2996580000,
+      "duration": "2.99658s"
+    },
+    {
+      "event_id": 419,
+      "event_type": "music",
+      "priority": "Medium",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 996237000,
+      "duration": "996.237ms"
+    },
+    {
+      "event_id": 552,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2797356000,
+      "duration": "2.797356s"
+    },
+    {
+      "event_id": 795,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3597724000,
+      "duration": "3.597724s"
+    },
+    {
+      "event_id": 502,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3201716000,
+      "duration": "3.201716s"
+    },
+    {
+      "event_id": 646,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4384352000,
+      "duration": "4.384352s"
+    },
+    {
+      "event_id": 192,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4400062000,
+      "duration": "4.400062s"
+    },
+    {
+      "event_id": 757,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3991008000,
+      "duration": "3.991008s"
+    },
+    {
+      "event_id": 715,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2402188000,
+      "duration": "2.402188s"
+    },
+    {
+      "event_id": 600,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2591500000,
+      "duration": "2.5915s"
+    },
+    {
+      "event_id": 426,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 4392036000,
+      "duration": "4.392036s"
+    },
+    {
+      "event_id": 613,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3595779000,
+      "duration": "3.595779s"
+    },
+    {
+      "event_id": 318,
+      "event_type": "dirty_floor",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 601983000,
+      "duration": "601.983ms"
+    },
+    {
+      "event_id": 211,
+      "event_type": "brawl",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2196997000,
+      "duration": "2.196997s"
+    },
+    {
+      "event_id": 534,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1197768000,
+      "duration": "1.197768s"
+    },
+    {
+      "event_id": 742,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 601204000,
+      "duration": "601.204ms"
+    },
+    {
+      "event_id": 590,
+      "event_type": "music",
+      "priority": "Medium",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 3405430000,
+      "duration": "3.40543s"
+    },
+    {
+      "event_id": 459,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600844000,
+      "duration": "600.844ms"
+    },
+    {
+      "event_id": 605,
+      "event_type": "music",
+      "priority": "Medium",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 603259000,
+      "duration": "603.259ms"
+    },
+    {
+      "event_id": 865,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601457000,
+      "duration": "601.457ms"
+    },
+    {
+      "event_id": 393,
+      "event_type": "dirty_table",
+      "priority": "Low",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 601228000,
+      "duration": "601.228ms"
+    },
+    {
+      "event_id": 717,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 601094000,
+      "duration": "601.094ms"
+    },
+    {
+      "event_id": 645,
+      "event_type": "brawl",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 603567000,
+      "duration": "603.567ms"
+    },
+    {
+      "event_id": 217,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602936000,
+      "duration": "602.936ms"
+    },
+    {
+      "event_id": 893,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601435000,
+      "duration": "601.435ms"
+    },
+    {
+      "event_id": 9,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 601152000,
+      "duration": "601.152ms"
+    },
+    {
+      "event_id": 662,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 601427000,
+      "duration": "601.427ms"
+    },
+    {
+      "event_id": 598,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601238000,
+      "duration": "601.238ms"
+    },
+    {
+      "event_id": 75,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600718000,
+      "duration": "600.718ms"
+    },
+    {
+      "event_id": 831,
+      "event_type": "not_on_list",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601238000,
+      "duration": "601.238ms"
+    },
+    {
+      "event_id": 171,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600732000,
+      "duration": "600.732ms"
+    },
+    {
+      "event_id": 317,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 601164000,
+      "duration": "601.164ms"
+    },
+    {
+      "event_id": 117,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600849000,
+      "duration": "600.849ms"
+    },
+    {
+      "event_id": 540,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 600569000,
+      "duration": "600.569ms"
+    },
+    {
+      "event_id": 167,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 607433000,
+      "duration": "607.433ms"
+    },
+    {
+      "event_id": 850,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1196368000,
+      "duration": "1.196368s"
+    },
+    {
+      "event_id": 559,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600624000,
+      "duration": "600.624ms"
+    },
+    {
+      "event_id": 357,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601371000,
+      "duration": "601.371ms"
+    },
+    {
+      "event_id": 708,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 600986000,
+      "duration": "600.986ms"
+    },
+    {
+      "event_id": 29,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 600949000,
+      "duration": "600.949ms"
+    },
+    {
+      "event_id": 848,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 600998000,
+      "duration": "600.998ms"
+    },
+    {
+      "event_id": 695,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601985000,
+      "duration": "601.985ms"
+    },
+    {
+      "event_id": 943,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602511000,
+      "duration": "602.511ms"
+    },
+    {
+      "event_id": 928,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602504000,
+      "duration": "602.504ms"
+    },
+    {
+      "event_id": 488,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602945000,
+      "duration": "602.945ms"
+    },
+    {
+      "event_id": 789,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602373000,
+      "duration": "602.373ms"
+    },
+    {
+      "event_id": 279,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1602023000,
+      "duration": "1.602023s"
+    },
+    {
+      "event_id": 867,
+      "event_type": "broken_itens",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 805953000,
+      "duration": "805.953ms"
+    },
+    {
+      "event_id": 804,
+      "event_type": "dirty_floor",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 605722000,
+      "duration": "605.722ms"
+    },
+    {
+      "event_id": 658,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602297000,
+      "duration": "602.297ms"
+    },
+    {
+      "event_id": 819,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602350000,
+      "duration": "602.35ms"
+    },
+    {
+      "event_id": 752,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602837000,
+      "duration": "602.837ms"
+    },
+    {
+      "event_id": 888,
+      "event_type": "bride",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602413000,
+      "duration": "602.413ms"
+    },
+    {
+      "event_id": 509,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602582000,
+      "duration": "602.582ms"
+    },
+    {
+      "event_id": 790,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602597000,
+      "duration": "602.597ms"
+    },
+    {
+      "event_id": 119,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602550000,
+      "duration": "602.55ms"
+    },
+    {
+      "event_id": 296,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602421000,
+      "duration": "602.421ms"
+    },
+    {
+      "event_id": 47,
+      "event_type": "bride",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602788000,
+      "duration": "602.788ms"
+    },
+    {
+      "event_id": 516,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602552000,
+      "duration": "602.552ms"
+    },
+    {
+      "event_id": 864,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602553000,
+      "duration": "602.553ms"
+    },
+    {
+      "event_id": 644,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602677000,
+      "duration": "602.677ms"
+    },
+    {
+      "event_id": 92,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602868000,
+      "duration": "602.868ms"
+    },
+    {
+      "event_id": 308,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602958000,
+      "duration": "602.958ms"
+    },
+    {
+      "event_id": 609,
+      "event_type": "bride",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602806000,
+      "duration": "602.806ms"
+    },
+    {
+      "event_id": 333,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602862000,
+      "duration": "602.862ms"
+    },
+    {
+      "event_id": 328,
+      "event_type": "bad_food",
+      "priority": "Medium",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 604360000,
+      "duration": "604.36ms"
+    },
+    {
+      "event_id": 984,
+      "event_type": "not_on_list",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 604198000,
+      "duration": "604.198ms"
+    },
+    {
+      "event_id": 98,
+      "event_type": "not_on_list",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603916000,
+      "duration": "603.916ms"
+    },
+    {
+      "event_id": 920,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 604317000,
+      "duration": "604.317ms"
+    },
+    {
+      "event_id": 896,
+      "event_type": "music",
+      "priority": "Medium",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 2396904000,
+      "duration": "2.396904s"
+    },
+    {
+      "event_id": 759,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 2794043000,
+      "duration": "2.794043s"
+    },
+    {
+      "event_id": 743,
+      "event_type": "music",
+      "priority": "Medium",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 4400805000,
+      "duration": "4.400805s"
+    },
+    {
+      "event_id": 723,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 4601892000,
+      "duration": "4.601892s"
+    },
+    {
+      "event_id": 891,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1800570000,
+      "duration": "1.80057s"
+    },
+    {
+      "event_id": 772,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2791661000,
+      "duration": "2.791661s"
+    },
+    {
+      "event_id": 826,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 792275000,
+      "duration": "792.275ms"
+    },
+    {
+      "event_id": 273,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3395376000,
+      "duration": "3.395376s"
+    },
+    {
+      "event_id": 182,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 1598313000,
+      "duration": "1.598313s"
+    },
+    {
+      "event_id": 87,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2201129000,
+      "duration": "2.201129s"
+    },
+    {
+      "event_id": 246,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3003088000,
+      "duration": "3.003088s"
+    },
+    {
+      "event_id": 1,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1595203000,
+      "duration": "1.595203s"
+    },
+    {
+      "event_id": 221,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2602496000,
+      "duration": "2.602496s"
+    },
+    {
+      "event_id": 68,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1793052000,
+      "duration": "1.793052s"
+    },
+    {
+      "event_id": 966,
+      "event_type": "accident",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3393144000,
+      "duration": "3.393144s"
+    },
+    {
+      "event_id": 612,
+      "event_type": "brawl",
+      "priority": "High",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 2398534000,
+      "duration": "2.398534s"
+    },
+    {
+      "event_id": 224,
+      "event_type": "accident",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 999956000,
+      "duration": "999.956ms"
+    },
+    {
+      "event_id": 735,
+      "event_type": "brawl",
+      "priority": "Medium",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3602337000,
+      "duration": "3.602337s"
+    },
+    {
+      "event_id": 979,
+      "event_type": "accident",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 1801120000,
+      "duration": "1.80112s"
+    },
+    {
+      "event_id": 13,
+      "event_type": "brawl",
+      "priority": "Low",
+      "team": "security",
+      "status": "Completed",
+      "duration_ns": 3603943000,
+      "duration": "3.603943s"
+    },
+    {
+      "event_id": 812,
+      "event_type": "music",
+      "priority": "High",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 3390707000,
+      "duration": "3.390707s"
+    },
+    {
+      "event_id": 457,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 2201639000,
+      "duration": "2.201639s"
+    },
+    {
+      "event_id": 739,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 602693000,
+      "duration": "602.693ms"
+    },
+    {
+      "event_id": 499,
+      "event_type": "music",
+      "priority": "Medium",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 3607258000,
+      "duration": "3.607258s"
+    },
+    {
+      "event_id": 196,
+      "event_type": "dirty_table",
+      "priority": "High",
+      "team": "decoration",
+      "status": "Completed",
+      "duration_ns": 602429000,
+      "duration": "602.429ms"
+    },
+    {
+      "event_id": 112,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 802451000,
+      "duration": "802.451ms"
+    },
+    {
+      "event_id": 939,
+      "event_type": "feeling_ill",
+      "priority": "High",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 1602462000,
+      "duration": "1.602462s"
+    },
+    {
+      "event_id": 178,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1007164000,
+      "duration": "1.007164s"
+    },
+    {
+      "event_id": 17,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1000714000,
+      "duration": "1.000714s"
+    },
+    {
+      "event_id": 702,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602259000,
+      "duration": "602.259ms"
+    },
+    {
+      "event_id": 565,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 600595000,
+      "duration": "600.595ms"
+    },
+    {
+      "event_id": 493,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 602980000,
+      "duration": "602.98ms"
+    },
+    {
+      "event_id": 550,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601577000,
+      "duration": "601.577ms"
+    },
+    {
+      "event_id": 227,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 602313000,
+      "duration": "602.313ms"
+    },
+    {
+      "event_id": 418,
+      "event_type": "not_on_list",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 609978000,
+      "duration": "609.978ms"
+    },
+    {
+      "event_id": 83,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 603623000,
+      "duration": "603.623ms"
+    },
+    {
+      "event_id": 48,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603229000,
+      "duration": "603.229ms"
+    },
+    {
+      "event_id": 781,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601403000,
+      "duration": "601.403ms"
+    },
+    {
+      "event_id": 583,
+      "event_type": "dirty_floor",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 601214000,
+      "duration": "601.214ms"
+    },
+    {
+      "event_id": 168,
+      "event_type": "music",
+      "priority": "Low",
+      "team": "music",
+      "status": "Completed",
+      "duration_ns": 601181000,
+      "duration": "601.181ms"
+    },
+    {
+      "event_id": 229,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603295000,
+      "duration": "603.295ms"
+    },
+    {
+      "event_id": 118,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601596000,
+      "duration": "601.596ms"
+    },
+    {
+      "event_id": 956,
+      "event_type": "not_on_list",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603876000,
+      "duration": "603.876ms"
+    },
+    {
+      "event_id": 195,
+      "event_type": "groom",
+      "priority": "Medium",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 603364000,
+      "duration": "603.364ms"
+    },
+    {
+      "event_id": 548,
+      "event_type": "bad_food",
+      "priority": "High",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601311000,
+      "duration": "601.311ms"
+    },
+    {
+      "event_id": 892,
+      "event_type": "groom",
+      "priority": "High",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 600683000,
+      "duration": "600.683ms"
+    },
+    {
+      "event_id": 406,
+      "event_type": "bad_food",
+      "priority": "Low",
+      "team": "catering",
+      "status": "Completed",
+      "duration_ns": 601262000,
+      "duration": "601.262ms"
+    },
+    {
+      "event_id": 5,
+      "event_type": "groom",
+      "priority": "Low",
+      "team": "coordinator",
+      "status": "Completed",
+      "duration_ns": 601631000,
+      "duration": "601.631ms"
+    },
+    {
+      "event_id": 823,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 607799000,
+      "duration": "607.799ms"
+    },
+    {
+      "event_id": 35,
+      "event_type": "broken_itens",
+      "priority": "High",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1009325000,
+      "duration": "1.009325s"
+    },
+    {
+      "event_id": 656,
+      "event_type": "dirty_floor",
+      "priority": "Low",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 1397548000,
+      "duration": "1.397548s"
+    },
+    {
+      "event_id": 481,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 602510000,
+      "duration": "602.51ms"
+    },
+    {
+      "event_id": 731,
+      "event_type": "broken_itens",
+      "priority": "Medium",
+      "team": "venue",
+      "status": "Completed",
+      "duration_ns": 603019000,
+      "duration": "603.019ms"
+    },
+    {
+      "event_id": 628,
+      "event_type": "feeling_ill",
+      "priority": "Low",
+      "team": "medical",
+      "status": "Completed",
+      "duration_ns": 601772000,
+      "duration": "601.772ms"
+    }
+  ]
 }

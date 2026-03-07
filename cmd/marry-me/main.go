@@ -89,22 +89,26 @@ func main() {
 		}
 	}()
 
-	log.Println("Pipeline ready. Ingesting events...")
+	simDuration := time.Duration(float64(360*time.Second) / cfg.Speed)
+	log.Printf("Pipeline ready. Simulating 6-hour wedding over %v (speed %.1fx)...", simDuration.Round(time.Second), cfg.Speed)
+	log.Println("(Ctrl+C to stop early and see partial report)")
 
-	// 5. Ingest events through coordinator (scheduled by timestamp, compressed by speed)
-	if err := coord.Ingest(ctx, events, cfg.Speed); err != nil {
-		log.Fatalf("ingest events: %v", err)
-	}
+	// 5. Ingest events in the background; coordinator schedules each one by its
+	//    wedding timestamp so they arrive at the right moment in the simulation.
+	go func() {
+		if err := coord.Ingest(ctx, events, cfg.Speed); err != nil && err != context.Canceled {
+			log.Printf("ingest error: %v", err)
+			return
+		}
+		s := coord.Stats()
+		log.Printf("All events dispatched: %d accepted, %d rejected", s.Accepted, s.Rejected)
+	}()
 
-	coordStats := coord.Stats()
-	log.Printf("Ingestion complete: %d accepted, %d rejected", coordStats.Accepted, coordStats.Rejected)
-
-	// Wait for processing to finish or signal
-	log.Println("Processing events... (Ctrl+C to stop early and see report)")
+	// Run until the simulation window closes or the user interrupts.
 	select {
 	case <-sigCh:
-		log.Println("Shutting down...")
-	case <-time.After(time.Duration(float64(360*time.Second) / cfg.Speed)):
+		log.Println("Interrupted. Shutting down...")
+	case <-time.After(simDuration):
 		log.Println("Simulation complete.")
 	}
 
