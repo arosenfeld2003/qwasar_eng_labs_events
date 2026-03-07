@@ -9,7 +9,9 @@
       "Bash(git add README.md internal/coordinator/coordinator.go cmd/marry-me/main.go internal/team/manager.go internal/team/manager_test.go .gitignore)",
       "Bash(git push -u origin feature/coordinator-entrypoint-readme 2>&1)",
       "Bash(gh pr create --title \"Add coordinator, entry point, and presentation-ready README\" --body \"$\\(cat <<'EOF'\n## Summary\n- Implement `internal/coordinator/` -- event validation & ingestion into pipeline\n- Create `cmd/marry-me/main.go` -- wires Coordinator -> Organizer -> Team Manager -> Stress Tracker\n- Add Security and Medical teams to team manager \\(was 8, now all 10 teams\\)\n- Rewrite README with architecture diagram, component table, and demo instructions\n- Fix `.gitignore` to allow `cmd/marry-me/` directory\n\n## Test plan\n- [x] `go build ./...` compiles cleanly\n- [x] `make test-short` -- all unit tests pass\n- [ ] `docker-compose up` -- end-to-end with RabbitMQ\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\nEOF\n\\)\")",
-      "Bash(make build 2>&1)"
+      "Bash(make build 2>&1)",
+      "Bash(git checkout -b demo-watcher 2>&1)",
+      "Bash(go build -o bin/demo-watcher ./cmd/demo-watcher 2>&1)"
     ]
   }
 }
